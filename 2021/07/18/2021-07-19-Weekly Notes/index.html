@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,zh-TW,default">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="cxxzsh">
+    
+    <title>
+        
+            【每周更新】Weekly Notes |
+        
+        cxxzsh&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/assets/blogImg/logo.jpg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"naiv.xyz","root":"/","language":["zh-CN","en","zh-TW","default"],"path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"cxxzsh's Blog","author":"cxxzsh","url":"https://naiv.xyz/","avatar":"/assets/blogImg/logo.jpg","logo":"/assets/blogImg/logo.jpg","favicon":"/assets/blogImg/logo.jpg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","about":"/about"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/cxxzsh","weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":"recovxy@gmail.com"}},"scroll":{"progress_bar":true,"percent":true,"hide_header":true},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["老大哥"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":true},"comment":{"enable":true,"use":"valine","valine":{"appid":"1PTJXbrdVcQCMR1j0JLlpHCU-gzGzoHsz","appkey":"56lf22kttbniHlMSEFsawHHc","server_urls":null,"placeholder":"Say something."},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":true},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="cxxzsh's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/assets/blogImg/logo.jpg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               cxxzsh&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                标签
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/categories">
+                                
+                                分类
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                关于
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                            标签
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories">
+                            
+                            分类
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                            关于
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        【每周更新】Weekly Notes
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/assets/blogImg/logo.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">cxxzsh</span>
+                                
+                                    <span class="author-badge">Lv3</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2021-07-18 21:55:14</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Fri Feb 04 2022 19:58:19 GMT+0800">2022-02-04 19:58:19</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E7%94%9F%E6%B4%BB/">生活</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%91%A8%E8%AE%B0/">周记</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.7k 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>5 分钟</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <p>受推友影响，也想记录下自己每周发生的、做过的事，可能都是一些诸如流水账般的记录，以及一些琐事的事情。日后来看或许会另有一般体会，甚至觉得好笑。总之我想到的就就记下，想写啥写啥，记不得的就算了。</p>
+<h3 id="WEEK-1"><a href="#WEEK-1" class="headerlink" title="WEEK 1"></a>WEEK 1</h3><ul>
+<li>买了一堆书，但并不期望自己会看完。</li>
+<li>看完了《全球通史》上册的后半部分，我似乎对1500年后的世界更感兴趣。</li>
+<li>刷了一些算法题，也参加了这周的LeetCode周赛，证明了我还是太菜。</li>
+<li>没写几行代码</li>
+<li>重温了一遍C++基础，对其细节有了更深的把握。</li>
+<li>练车，学会了倒车入库。</li>
+<li>查了成绩，一科没挂（笑死</li>
+<li>陪小皮玩了很多个小时的王者荣耀（开心</li>
+<li>拿起《STL源码剖析》后又放下（就是不想看</li>
+</ul>
+<h3 id="WEEK-2"><a href="#WEEK-2" class="headerlink" title="WEEK 2"></a>WEEK 2</h3><ul>
+<li>坚持打卡LeetCode每日一题</li>
+<li>科目二已经可以走完全程啦~</li>
+<li>肚子痛，貌似是十二指肠溃疡，去看了医生吃了药，现在已经好很多了。</li>
+<li>坚持每天晚上睡觉不吹空调</li>
+<li>骑行</li>
+<li>带着小皮赢了很多把王者荣耀，希望她以后不要因为输掉游戏而不开心呀</li>
+<li>每次参加LeetCode周赛排名都下降，不敢再参加了 ):</li>
+<li>听了很多歌</li>
+</ul>
+<h3 id="WEEK-3"><a href="#WEEK-3" class="headerlink" title="WEEK 3"></a>WEEK 3</h3><ul>
+<li>看完了《春琴抄》，这种畸形的、变态的爱真的是爱吗？</li>
+<li>学会了黄莺的叫声：”ho—hokekyo“、”kei kyo, kei kyo, kei kyo kei kyo“、”ho—ki—bekakon”，还蛮有趣的。</li>
+<li>外出旅游一次</li>
+<li>路过初中母校、高中母校，哈哈哈哈~</li>
+<li>捐款一次</li>
+<li>和小皮聊了很多她的事</li>
+</ul>
+<h3 id="WEEK-4"><a href="#WEEK-4" class="headerlink" title="WEEK 4"></a>WEEK 4</h3><ul>
+<li>考过了科目二（好险</li>
+<li>开始看《现代操作系统》，看完了进程与线程</li>
+<li>捣鼓了一下Rust</li>
+<li>打游戏</li>
+<li>立秋那天请小皮喝奶茶，是不是她秋天的第一杯呢？</li>
+<li>包下了每天的淘米蒸饭</li>
+<li>LeetCode已经不再刷了，等到快校招的时候再来狠狠刷一把</li>
+</ul>
+<h3 id="WEEK-5"><a href="#WEEK-5" class="headerlink" title="WEEK 5"></a>WEEK 5</h3><ul>
+<li>过生日，尽管知道的人不多，我也不喜欢什么小事都告诉其他人</li>
+<li>最近又陷入周期性的情绪低落，做什么事都没有动力，我把这件事告诉了小皮，很高兴她能认真听我说完</li>
+<li>继续看《现代操作系统》，速度非常缓慢，等待自己情绪恢复</li>
+<li>学习了gin框架</li>
+</ul>
+<h3 id="WEEK-6"><a href="#WEEK-6" class="headerlink" title="WEEK 6"></a>WEEK 6</h3><ul>
+<li>和三个小学生打乒乓球，被虐了啊 t-t</li>
+<li>买了本《Go语言编程之旅》</li>
+<li>看完了《Go Web编程》的前三章。</li>
+<li>申请了GitHub Student Developer Pack，希望能成功。</li>
+</ul>
+<h3 id="WEEK-7"><a href="#WEEK-7" class="headerlink" title="WEEK 7"></a>WEEK 7</h3><ul>
+<li>有惊无险的考过了科目三（第二把最后都停车了，你告诉我系统断网了？？？</li>
+<li>成功申请到了GitHub Student Developer Pack，但发现我暂时用不上</li>
+<li>粗略的看完了《Go Web编程》，对基础的概念有了一些认识</li>
+</ul>
+<h3 id="WEEK-8"><a href="#WEEK-8" class="headerlink" title="WEEK 8"></a>WEEK 8</h3><ul>
+<li>科目四过了，马上就有小本本了</li>
+<li>准备开学的一些事情</li>
+<li>拿到驾照了</li>
+<li>第一次开汽车载着爸妈和奶奶</li>
+<li>学了点TypeScript</li>
+<li>回学校</li>
+</ul>
+<h3 id="WEEK-9"><a href="#WEEK-9" class="headerlink" title="WEEK 9"></a>WEEK 9</h3><ul>
+<li>吃饭遇见小皮了，哈哈哈</li>
+<li>把马原借给了小皮，本来还说要帮她刷跑，不知道为什么他们换了一个跑步软件（评分1星）,不得不说这软件真烂。不过我挺好奇用的是什么算法，我用了模拟定位没问题，出问题的就是步频，下次再去试试刷高步频。</li>
+<li>大三生活就要开始啦，难懂且无聊的专业课（测控技术与仪器）。</li>
+<li>捣鼓了一下单片机</li>
+</ul>
+<h3 id="WEEK-10"><a href="#WEEK-10" class="headerlink" title="WEEK 10"></a>WEEK 10</h3><ul>
+<li><p>最近又陷入了一种不知道做什么的状态</p>
+</li>
+<li><p>进入大三才渐渐发现，大学最应该做的就是锻炼好身体，所以最近都有在跑步，从每天五公里开始吧。</p>
+</li>
+<li><p>班主任每次发通知都慢半拍，导致我公选课又没选上，可是我想和小皮选一样的啊QAQ。</p>
+</li>
+</ul>
+<h3 id="WEEK-11"><a href="#WEEK-11" class="headerlink" title="WEEK 11"></a>WEEK 11</h3><ul>
+<li>收到了一位女同学的中秋月饼哈哈哈哈</li>
+<li>拿到了蓝桥杯的证书</li>
+<li>刷LeetCode</li>
+<li>送给小皮一盒月饼</li>
+<li>和室友出去吃了顿饭，那家店的和牛真不错哈哈哈</li>
+<li>坚持跑步</li>
+</ul>
+<h3 id="WEEK-12"><a href="#WEEK-12" class="headerlink" title="WEEK 12"></a>WEEK 12</h3><ul>
+<li>刷LeetCode</li>
+<li>坚持跑步</li>
+<li>看《MySql必知必会》</li>
+<li>学了一下docker的基本使用，不得不被它的强大所折服</li>
+<li>2021&#x2F;9&#x2F;29，南昌的天气说变就变，昨天还是高温，今天却突然下雨，我甚至差点感冒</li>
+<li>又去了那家和牛店，感觉战斗力大不如上一次啊</li>
+<li>去了秋水广场，去晚了呀，喷泉已经结束了，但赣江两岸的夜景也很美</li>
+<li>去了万寿宫，夜景很美，小吃也不错，还有很多漂亮的小姐姐</li>
+<li>看完了《计算机网络自顶向下方法》第一章</li>
+</ul>
+<h3 id="WEEK-13"><a href="#WEEK-13" class="headerlink" title="WEEK 13"></a>WEEK 13</h3><ul>
+<li>报了普通话考试，竟然还要去另一个校区确认（痛苦</li>
+<li>左腿根部疼痛，大概率是得了梨状肌综合征（绝望</li>
+</ul>
+<h3 id="WEEK-14"><a href="#WEEK-14" class="headerlink" title="WEEK 14"></a>WEEK 14</h3><ul>
+<li>继续看《计算机网络：自顶向下方法》，看完一半啦</li>
+<li>腿疼好了一些</li>
+<li>学校的瑞辛已经快一年没喝过了，又去光顾了一次，但我感觉云南红蜜美式和普通美式没啥区别呀？</li>
+<li>又薅到了京东农场50元（：</li>
+<li>开始读《深入理解Linux内核》</li>
+</ul>
+<h3 id="WEEK-15"><a href="#WEEK-15" class="headerlink" title="WEEK 15"></a>WEEK 15</h3><ul>
+<li>自控实验课，第一个做出现象，好开心哈哈哈哈</li>
+</ul>
+<h3 id="WEEK-16"><a href="#WEEK-16" class="headerlink" title="WEEK 16"></a>WEEK 16</h3><ul>
+<li>最近都快把写weekly note这事儿给忘了</li>
+<li>乘着双十一又囤了一波书</li>
+<li>忙着复习</li>
+</ul>
+<h3 id="WEEK-17"><a href="#WEEK-17" class="headerlink" title="WEEK 17"></a>WEEK 17</h3><ul>
+<li>买了一堆吃的，原因是晚上肚子总会饿</li>
+<li>腿继续疼</li>
+<li>把Manjaro玩挂了，花了好久才恢复（好菜</li>
+<li>最近很多考试，抽点时间复习吧</li>
+</ul>
+<h3 id="WEEK-18"><a href="#WEEK-18" class="headerlink" title="WEEK 18"></a>WEEK 18</h3><ul>
+<li>更换了博客主题:  Chic -&gt; keep</li>
+<li>准备考试（痛苦</li>
+</ul>
+<h3 id="WEEK-19"><a href="#WEEK-19" class="headerlink" title="WEEK 19"></a>WEEK 19</h3><ul>
+<li>考试</li>
+<li>考试</li>
+<li>考试</li>
+</ul>
+<h3 id="WEEK-20"><a href="#WEEK-20" class="headerlink" title="WEEK 20"></a>WEEK 20</h3><p>摸鱼了</p>
+<h3 id="WEEK-21"><a href="#WEEK-21" class="headerlink" title="WEEK 21"></a>WEEK 21</h3><ul>
+<li>看了几章《<strong>操作系统导论</strong>》并做了相应习题：<a class="link"   target="_blank" rel="noopener" href="https://github.com/recovxy/ostep-homework-answer" >https://github.com/recovxy/ostep-homework-answer<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+<h3 id="WEEK-22"><a href="#WEEK-22" class="headerlink" title="WEEK 22"></a>WEEK 22</h3><ul>
+<li>突然想做一个关于国内社交软件（如Soul、探探、陌陌等）的用户真实度的调查</li>
+<li>元旦快乐</li>
+<li>似乎干了件蠢事，mission failed，我是傻逼我是傻逼</li>
+<li>放假啦</li>
+</ul>
+<h3 id="WEEK-23"><a href="#WEEK-23" class="headerlink" title="WEEK 23"></a>WEEK 23</h3><ul>
+<li>看《Effective C++》</li>
+<li>仿写了一下ttcp</li>
+</ul>
+<h3 id="WEEK-24"><a href="#WEEK-24" class="headerlink" title="WEEK 24"></a>WEEK 24</h3><ul>
+<li>看完了《Effective C++》中的30多个条款</li>
+<li>看完了《Unix网络编程》前5章</li>
+<li>最近游戏打的有点多了，这样下去是不行的</li>
+</ul>
+<h3 id="WEEK-25"><a href="#WEEK-25" class="headerlink" title="WEEK 25"></a>WEEK 25</h3><ul>
+<li>过新年了</li>
+<li>一整个星期都在摆烂</li>
+</ul>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E7%94%9F%E6%B4%BB/">生活</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%91%A8%E8%AE%B0/">周记</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到 QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信扫一扫"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到微博"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2021/07/27/2021-07-27-Touring%20Fairy%20Mountain/"
+                                   title="仙山一游"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">仙山一游</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2021/06/03/2021-06-03-Record%20Catch%20a%20girl%20from%20scratch/"
+                                   title="记录：从零开始追一个女生"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">记录：从零开始追一个女生</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;评论
+        </div>
+        <div class="comment-plugin-fail border-box">
+    <span class="fail-tip">评论插件加载失败</span>
+    <button class="reload keep-button">点击重新加载</button>
+</div>
+<div class="comment-plugin-loading flex-center border-box">
+    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
+    <span class="load-tip">正在加载评论插件</span>
+</div>
+<script data-pjax>
+  window.KeepCommentPlugin = {}
+  window.KeepCommentPlugin.hideLoading = () => {
+    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
+    cplDom.style.display = 'none'
+  }
+  window.KeepCommentPlugin.loadFailHandle = () => {
+    window.KeepCommentPlugin.hideLoading()
+    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
+    cpfDom.style.display = 'flex'
+    cpfDom.querySelector('.reload').addEventListener('click', () => {
+      window.location.reload()
+    })
+  }
+</script>
+
+        
+            
+
+    <div class="valine-container">
+        <div id="vcomments"></div>
+        <script data-pjax
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"
+                async
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        ></script>
+        <script data-pjax
+                async
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        >
+          window.KeepCommentPlugin.initValine = () => {
+            const config = {
+              el: '#vcomments',
+              appId: '1PTJXbrdVcQCMR1j0JLlpHCU-gzGzoHsz',
+              appKey: '56lf22kttbniHlMSEFsawHHc',
+              meta: ['nick', 'mail', 'link'],
+              avatar: 'wavatar',
+              enableQQ: true,
+              placeholder: 'Say something.',
+              lang: 'zh-CN,en,zh-TW,default'.toLowerCase()
+            }
+
+            if ('') {
+              config.serverURLs = ''
+            }
+
+            if (window?.Valine) {
+              new Valine(config)
+              window.KeepCommentPlugin.hideLoading()
+            } else {
+              setTimeout(() => {
+                window.KeepCommentPlugin.initValine()
+              }, 1000)
+            }
+          }
+
+          if ('true' === 'true') {
+            setTimeout(() => {
+              window.KeepCommentPlugin.initValine()
+            }, 1200)
+          } else {
+            window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initValine)
+          }
+        </script>
+    </div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-1"><span class="nav-text">WEEK 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-2"><span class="nav-text">WEEK 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-3"><span class="nav-text">WEEK 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-4"><span class="nav-text">WEEK 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-5"><span class="nav-text">WEEK 5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-6"><span class="nav-text">WEEK 6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-7"><span class="nav-text">WEEK 7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-8"><span class="nav-text">WEEK 8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-9"><span class="nav-text">WEEK 9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-10"><span class="nav-text">WEEK 10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-11"><span class="nav-text">WEEK 11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-12"><span class="nav-text">WEEK 12</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-13"><span class="nav-text">WEEK 13</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-14"><span class="nav-text">WEEK 14</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-15"><span class="nav-text">WEEK 15</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-16"><span class="nav-text">WEEK 16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-17"><span class="nav-text">WEEK 17</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-18"><span class="nav-text">WEEK 18</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-19"><span class="nav-text">WEEK 19</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-20"><span class="nav-text">WEEK 20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-21"><span class="nav-text">WEEK 21</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-22"><span class="nav-text">WEEK 22</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-23"><span class="nav-text">WEEK 23</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-24"><span class="nav-text">WEEK 24</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-25"><span class="nav-text">WEEK 25</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2025
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">cxxzsh</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">访客数</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">访问量</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-1"><span class="nav-text">WEEK 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-2"><span class="nav-text">WEEK 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-3"><span class="nav-text">WEEK 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-4"><span class="nav-text">WEEK 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-5"><span class="nav-text">WEEK 5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-6"><span class="nav-text">WEEK 6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-7"><span class="nav-text">WEEK 7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-8"><span class="nav-text">WEEK 8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-9"><span class="nav-text">WEEK 9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-10"><span class="nav-text">WEEK 10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-11"><span class="nav-text">WEEK 11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-12"><span class="nav-text">WEEK 12</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-13"><span class="nav-text">WEEK 13</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-14"><span class="nav-text">WEEK 14</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-15"><span class="nav-text">WEEK 15</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-16"><span class="nav-text">WEEK 16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-17"><span class="nav-text">WEEK 17</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-18"><span class="nav-text">WEEK 18</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-19"><span class="nav-text">WEEK 19</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-20"><span class="nav-text">WEEK 20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-21"><span class="nav-text">WEEK 21</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-22"><span class="nav-text">WEEK 22</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-23"><span class="nav-text">WEEK 23</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-24"><span class="nav-text">WEEK 24</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEEK-25"><span class="nav-text">WEEK 25</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/header-shrink.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/back2top.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/toggle-theme.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/code-block.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/libs/anime.min.js"></script>
+
+<!-- local search -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/local-search.min.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/lazyload.min.js"></script>
+
+
+<div class="pjax">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/toc.min.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/share.min.js"></script>
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

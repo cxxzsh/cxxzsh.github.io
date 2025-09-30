@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,zh-TW,default">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="cxxzsh">
+    
+    <title>
+        
+            Qt学习笔记（一） |
+        
+        cxxzsh&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/assets/blogImg/logo.jpg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"naiv.xyz","root":"/","language":["zh-CN","en","zh-TW","default"],"path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"cxxzsh's Blog","author":"cxxzsh","url":"https://naiv.xyz/","avatar":"/assets/blogImg/logo.jpg","logo":"/assets/blogImg/logo.jpg","favicon":"/assets/blogImg/logo.jpg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","about":"/about"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/cxxzsh","weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":"recovxy@gmail.com"}},"scroll":{"progress_bar":true,"percent":true,"hide_header":true},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["老大哥"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":true},"comment":{"enable":true,"use":"valine","valine":{"appid":"1PTJXbrdVcQCMR1j0JLlpHCU-gzGzoHsz","appkey":"56lf22kttbniHlMSEFsawHHc","server_urls":null,"placeholder":"Say something."},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":true},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="cxxzsh's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/assets/blogImg/logo.jpg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               cxxzsh&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                标签
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/categories">
+                                
+                                分类
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                关于
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                            标签
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories">
+                            
+                            分类
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                            关于
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Qt学习笔记（一）
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/assets/blogImg/logo.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">cxxzsh</span>
+                                
+                                    <span class="author-badge">Lv3</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2021-03-20 23:21:05</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Mon Nov 22 2021 22:17:37 GMT+0800">2021-11-22 22:17:37</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">学习记录</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/C-C/">C/C++</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Qt/">Qt</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.8k 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>6 分钟</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="1-Qt简单介绍"><a href="#1-Qt简单介绍" class="headerlink" title="1 Qt简单介绍"></a>1 Qt简单介绍</h1><h2 id="1-1-什么是Qt"><a href="#1-1-什么是Qt" class="headerlink" title="1.1 什么是Qt"></a>1.1 什么是Qt</h2><p>Qt是一个<strong>跨平台</strong>的C++<strong>图形用户界面应用程序框架</strong>。它为应用程序开发者提供建立艺术级图形界面所需的所有功能。它是完全面向对象的，很容易扩展，并且允许真正的组件编程。</p>
+<h2 id="1-2-支持的平台"><a href="#1-2-支持的平台" class="headerlink" title="1.2 支持的平台"></a>1.2 支持的平台</h2><p>l  Windows – XP、Vista、Win7、Win8、Win2008、Win10</p>
+<p>l  Uinux&#x2F;X11 – Linux、Sun Solaris、HP-UX、Compaq Tru64 UNIX、IBM AIX、SGI IRIX、FreeBSD、BSD&#x2F;OS、和其他很多X11平台</p>
+<p>l  Macintosh – Mac OS X</p>
+<p>l  Embedded – 有帧缓冲支持的嵌入式Linux平台，Windows CE</p>
+<h2 id="1-3-Qt的优点"><a href="#1-3-Qt的优点" class="headerlink" title="1.3 Qt的优点"></a>1.3 Qt的优点</h2><ul>
+<li><p>l  跨平台，几乎支持所有的平台</p>
+</li>
+<li><p>l  接口简单，容易上手，学习QT框架对学习其他框架有参考意义。 </p>
+</li>
+<li><p>l  一定程度上简化了内存回收机制 </p>
+</li>
+<li><p>l  开发效率高，能够快速的构建应用程序。</p>
+</li>
+<li><p>l  有很好的社区氛围，市场份额在缓慢上升。</p>
+</li>
+<li><p>l  可以进行嵌入式开发。</p>
+</li>
+</ul>
+<h1 id="2-Qt"><a href="#2-Qt" class="headerlink" title="2 Qt"></a>2 Qt</h1><h2 id="2-1-使用向导创建"><a href="#2-1-使用向导创建" class="headerlink" title="2.1 使用向导创建"></a>2.1 使用向导创建</h2><p>打开Qt Creator 界面选择 New Project或者选择菜单栏 【文件】-【新建文件或项目】菜单项</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/assets/Qt.assets/01_02.jpg"
+                        alt="img"
+                 ></p>
+<p>【Location】弹出New File or Project对话框，选择Qt Widgets Application</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/assets/Qt.assets/01_03.jpg"
+                        alt="img"
+                 ></p>
+<p>选择【Choose】按钮，弹出如下对话框</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/assets/Qt.assets/01_04.jpg"
+                        alt="img"
+                 ></p>
+<p>【Build System】选择默认的qmke即可</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/assets/Qt.assets/01_05.jpg"
+                        alt="img"
+                 ></p>
+<p>【Detials】Base class 根据需要选择，QMainWindow（带菜单栏）和QDialog（带对话框）都是继承自QWidget（精简版）。</p>
+<p><strong>QWidget</strong>类是所有用户界面对象的基类。 窗口部件是用户界面的一个原子：它从窗口系统接收鼠标、键盘和其它事件，并且在屏幕上绘制自己的表现。每一个窗口部件都是矩形，并且它们按Z轴顺序排列的。一个窗口部件可以被它的父窗口部件或者它前面的窗口部件盖住一部分。</p>
+<p><strong>QMainWindow</strong> 类提供一个有菜单条、锚接窗口（例如工具条）和一个状态条的主应用程序窗口。主窗口通常用在提供一个大的中央窗口部件（例如文本编辑或者绘制画布）以及周围菜单、工具条和一个状态条。QMainWindow常常被继承，因为这使得封装中央部件、菜单和工具条以及窗口状态变得更容易。继承使创建当用户点击菜单项或者工具条按钮时被调用的槽成为可能。你也可以使用Qt设计器来创建主窗口。</p>
+<p><strong>QDialog</strong>类是对话框窗口的基类。对话框窗口是主要用于短期任务以及和用户进行简要通讯的顶级窗口。QDialog可以是模式的也可以是非模式的。QDialog支持扩展性并且可以提供返回值。它们可以有默认按钮。QDialog也可以有一个QSizeGrip在它的右下角，使用setSizeGripEnabled()。<strong>QDialog</strong> 是最普通的顶级窗口。不被嵌入到一个父窗口部件的窗口部件被叫做顶级窗口部件。通常情况下，顶级窗口部件是有框架和标题栏的窗口（尽管如果使用了一定的窗口部件标记，创建顶级窗口部件时也可能没有这些装饰。）在Qt中，QMainWindow和和不同的QDialog的子类是最普通的顶级窗口。</p>
+<p>如果是顶级对话框，那就基于<strong>QDialog</strong>创建，如果是主窗体，那就基于<strong>QMainWindow</strong>，如果不确定，或者有可能作为顶级窗体，或有可能嵌入到其他窗体中，则基于<strong>QWidget</strong>创建。当然了，实际中，你还可以基于任何其他部件类来派生。看实际需求了，比如QFrame、QStackedWidget等等。</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/assets/Qt.assets/01_06.jpg"
+                        alt="img"
+                 ></p>
+<p>【Translation】可有可无吧，直接下一步</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/assets/Qt.assets/01_07.jpg"
+                        alt="img"
+                 ></p>
+<p>【Kits】选择编译套件</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/assets/Qt.assets/01_08.jpg"
+                        alt="img"
+                 ></p>
+<p>【Summay】点击完成</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/assets/Qt.assets/01_09.jpg"
+                        alt="img"
+                 ></p>
+<h2 id="2-2-pro工程文件"><a href="#2-2-pro工程文件" class="headerlink" title="2.2 .pro工程文件"></a>2.2 .pro工程文件</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">QT		+= core gui <span class="comment">//包含的模块</span></span><br><span class="line"><span class="built_in">greaterThan</span>(QT_MAJOR_VERSION, <span class="number">4</span>): QT += widgets <span class="comment">//大于Qt4版本 才包含widget模块</span></span><br><span class="line">TARGET = QtFirst <span class="comment">//应用程序名 生成的.exe程序名称</span></span><br><span class="line">TEMPLATE = app <span class="comment">//模板类型  应用程序模板</span></span><br><span class="line">SOURCES += main.cpp\  <span class="comment">//源文件</span></span><br><span class="line">        mywidget.cpp \</span><br><span class="line">HEADERS +=mywidget.h \    <span class="comment">//头文件</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-3-main-cpp"><a href="#2-3-main-cpp" class="headerlink" title="2.3 main.cpp"></a>2.3 main.cpp</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;mywidget.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QApplication&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   	<span class="comment">//QApplication 应用程序类 初始化我们的应用程序</span></span><br><span class="line">    <span class="function">QApplication <span class="title">a</span><span class="params">(argc, argv)</span></span>;</span><br><span class="line">    <span class="comment">//创建应该窗口控件</span></span><br><span class="line">    MyWidget w;</span><br><span class="line">    <span class="comment">//显示一个窗口 hide隐藏，且窗口默认隐藏</span></span><br><span class="line">    w.<span class="built_in">show</span>();</span><br><span class="line">    <span class="comment">//a.exec() 主事件循环（带阻塞 等待用户操作界面）</span></span><br><span class="line">    <span class="keyword">return</span> a.<span class="built_in">exec</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-4widget-h"><a href="#2-4widget-h" class="headerlink" title="2.4widget.h"></a>2.4widget.h</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> WIDGET_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> WIDGET_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QWidget&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Widget</span> : <span class="keyword">public</span> QWidget</span><br><span class="line">&#123;</span><br><span class="line"> Q_OBJECT<span class="comment">//让Widget支持信号和槽机制</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">public</span>:</span><br><span class="line">  <span class="built_in">Widget</span>(QWidget *parent = <span class="number">0</span>);</span><br><span class="line">  ~<span class="built_in">Widget</span>();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> <span class="comment">// WIDGET_H</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-5-widget-cpp"><a href="#2-5-widget-cpp" class="headerlink" title="2.5 widget.cpp"></a>2.5 widget.cpp</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;widget.h&quot;</span></span></span><br><span class="line"></span><br><span class="line">Widget::<span class="built_in">Widget</span>(QWidget *parent)</span><br><span class="line"> : <span class="built_in">QWidget</span>(parent)</span><br><span class="line"> &#123;</span><br><span class="line"> <span class="comment">//界面的设计是在 窗口控件的构造函数中设计</span></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">Widget::~<span class="built_in">Widget</span>()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-第一个程序"><a href="#3-第一个程序" class="headerlink" title="3 第一个程序"></a>3 第一个程序</h1><p>写在wedget的构造函数中：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Widget::<span class="built_in">Widget</span>(QWidget *parent)</span><br><span class="line"> : <span class="built_in">QWidget</span>(parent)</span><br><span class="line">&#123;</span><br><span class="line"> 	<span class="comment">//this 代表当前主窗口</span></span><br><span class="line"> 	<span class="comment">//设置标题</span></span><br><span class="line">     <span class="keyword">this</span>-&gt;<span class="built_in">setWindowTitle</span>(<span class="string">&quot;第一个窗口&quot;</span>);</span><br><span class="line">     <span class="comment">//固定窗口（不可拖动）</span></span><br><span class="line">     <span class="comment">//this‐&gt;setFixedSize(800,600);</span></span><br><span class="line">     <span class="comment">//设置窗口大小(可拖动)</span></span><br><span class="line">     <span class="keyword">this</span>‐&gt;<span class="built_in">resize</span>( <span class="number">800</span> , <span class="number">600</span> );</span><br><span class="line">     </span><br><span class="line">     <span class="comment">//在窗口上放一个按钮</span></span><br><span class="line">     <span class="comment">//创建一个button控件</span></span><br><span class="line">     <span class="comment">//parent父对象为this 表明 主窗口 将来接管button</span></span><br><span class="line">     <span class="comment">//因为我希望将button放到当前窗口中 this代表当前窗口</span></span><br><span class="line">     QPushButton *button1 = <span class="keyword">new</span> <span class="built_in">QPushButton</span>(<span class="string">&quot;戳我呀&quot;</span>,<span class="keyword">this</span>);</span><br><span class="line">     </span><br><span class="line">     QPushButton *button2 = <span class="keyword">new</span> <span class="built_in">QPushButton</span>(<span class="string">&quot;点我呀&quot;</span>,<span class="keyword">this</span>);</span><br><span class="line">     <span class="comment">//默认控件会显示到主窗口的左上方</span></span><br><span class="line">     <span class="comment">//移动按钮</span></span><br><span class="line">     button1‐&gt;<span class="built_in">move</span>( <span class="number">400</span> , <span class="number">300</span> );</span><br><span class="line"> &#125;  </span><br></pre></td></tr></table></figure>
+
+<h1 id="4-对象树"><a href="#4-对象树" class="headerlink" title="4 对象树"></a>4 对象树</h1><p>在创建QObject对象时，可以提供一个其父对象，我们创建的这个QObject对象会自动添加</p>
+<p>到其父对象的children()列表。</p>
+<p>当父对象析构的时候，这个列表中的所有对象也会被析构。（注意，这里的父对象并不是继</p>
+<p>承意义上的父类！）</p>
+<p>我们也可以自己删除子对象，它们会自动从其父对象列表中删除</p>
+<p><strong>建议：从堆区申请空间 而不是从栈区。</strong></p>
+<p>例1，从堆区申请空间:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//从堆区申请空间</span></span><br><span class="line">QPushButton *button = <span class="keyword">new</span> <span class="built_in">QPushButton</span>(<span class="keyword">this</span>);</span><br></pre></td></tr></table></figure>
+
+<p>例2，从栈区申请空间（quit被释放一次）:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">QWidget window;</span><br><span class="line"><span class="comment">//创建一个qiut按钮</span></span><br><span class="line"><span class="function">QPushButton <span class="title">quit</span><span class="params">(<span class="string">&quot;Quit&quot;</span>, &amp;window)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>入栈顺序：先入window 后quit。释放时，弹栈先调用quit的析构，就会将quit从windos的孩子列表删除，然后windwos调用析构，由于孩子列表中没有对象，就不会再次去释放quit，<strong>qiut只被调用了析构一次</strong>。</p>
+<p>例3，从栈区申请空间（quit被释放两次）:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">QPushButton <span class="title">quit</span><span class="params">(<span class="string">&quot;Quit&quot;</span>)</span></span>;</span><br><span class="line">QWidget window;</span><br><span class="line">quit.<span class="built_in">setParent</span>(&amp;window);</span><br></pre></td></tr></table></figure>
+
+<p>入栈顺序：先入quit 后window 。释放时，先调用window析构，查看window的孩子列表，调用quit的析构。然后quit出栈，也会调用quit的析构。所以<strong>quit被调用了两次析构</strong>。在 Qt 中，尽量在构造的时候就指定 parent 对象，并且大胆在堆上创建。</p>
+<h1 id="5-坐标体系"><a href="#5-坐标体系" class="headerlink" title="5 坐标体系"></a>5 坐标体系</h1><p>以左上角为原点（0,0），X向右增加，Y向下增加。</p>
+<p>对于嵌套窗口，其坐标是<strong>相对于父窗口</strong>来说的。</p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/C-C/">C/C++</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Qt/">Qt</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到 QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信扫一扫"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到微博"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2021/03/21/2021-03-21-Qt%20study%20notes%20(2)/"
+                                   title="Qt学习笔记（二）"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Qt学习笔记（二）</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2021/03/12/2021-03-12-C++%20new%20and%20delete/"
+                                   title="C++的new与delete"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">C++的new与delete</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;评论
+        </div>
+        <div class="comment-plugin-fail border-box">
+    <span class="fail-tip">评论插件加载失败</span>
+    <button class="reload keep-button">点击重新加载</button>
+</div>
+<div class="comment-plugin-loading flex-center border-box">
+    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
+    <span class="load-tip">正在加载评论插件</span>
+</div>
+<script data-pjax>
+  window.KeepCommentPlugin = {}
+  window.KeepCommentPlugin.hideLoading = () => {
+    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
+    cplDom.style.display = 'none'
+  }
+  window.KeepCommentPlugin.loadFailHandle = () => {
+    window.KeepCommentPlugin.hideLoading()
+    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
+    cpfDom.style.display = 'flex'
+    cpfDom.querySelector('.reload').addEventListener('click', () => {
+      window.location.reload()
+    })
+  }
+</script>
+
+        
+            
+
+    <div class="valine-container">
+        <div id="vcomments"></div>
+        <script data-pjax
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"
+                async
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        ></script>
+        <script data-pjax
+                async
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        >
+          window.KeepCommentPlugin.initValine = () => {
+            const config = {
+              el: '#vcomments',
+              appId: '1PTJXbrdVcQCMR1j0JLlpHCU-gzGzoHsz',
+              appKey: '56lf22kttbniHlMSEFsawHHc',
+              meta: ['nick', 'mail', 'link'],
+              avatar: 'wavatar',
+              enableQQ: true,
+              placeholder: 'Say something.',
+              lang: 'zh-CN,en,zh-TW,default'.toLowerCase()
+            }
+
+            if ('') {
+              config.serverURLs = ''
+            }
+
+            if (window?.Valine) {
+              new Valine(config)
+              window.KeepCommentPlugin.hideLoading()
+            } else {
+              setTimeout(() => {
+                window.KeepCommentPlugin.initValine()
+              }, 1000)
+            }
+          }
+
+          if ('true' === 'true') {
+            setTimeout(() => {
+              window.KeepCommentPlugin.initValine()
+            }, 1200)
+          } else {
+            window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initValine)
+          }
+        </script>
+    </div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Qt%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D"><span class="nav-text">1 Qt简单介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E4%BB%80%E4%B9%88%E6%98%AFQt"><span class="nav-text">1.1 什么是Qt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E6%94%AF%E6%8C%81%E7%9A%84%E5%B9%B3%E5%8F%B0"><span class="nav-text">1.2 支持的平台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Qt%E7%9A%84%E4%BC%98%E7%82%B9"><span class="nav-text">1.3 Qt的优点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Qt"><span class="nav-text">2 Qt</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E4%BD%BF%E7%94%A8%E5%90%91%E5%AF%BC%E5%88%9B%E5%BB%BA"><span class="nav-text">2.1 使用向导创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-pro%E5%B7%A5%E7%A8%8B%E6%96%87%E4%BB%B6"><span class="nav-text">2.2 .pro工程文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-main-cpp"><span class="nav-text">2.3 main.cpp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4widget-h"><span class="nav-text">2.4widget.h</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-widget-cpp"><span class="nav-text">2.5 widget.cpp</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F"><span class="nav-text">3 第一个程序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E5%AF%B9%E8%B1%A1%E6%A0%91"><span class="nav-text">4 对象树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E5%9D%90%E6%A0%87%E4%BD%93%E7%B3%BB"><span class="nav-text">5 坐标体系</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2025
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">cxxzsh</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">访客数</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">访问量</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Qt%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D"><span class="nav-text">1 Qt简单介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E4%BB%80%E4%B9%88%E6%98%AFQt"><span class="nav-text">1.1 什么是Qt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E6%94%AF%E6%8C%81%E7%9A%84%E5%B9%B3%E5%8F%B0"><span class="nav-text">1.2 支持的平台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Qt%E7%9A%84%E4%BC%98%E7%82%B9"><span class="nav-text">1.3 Qt的优点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Qt"><span class="nav-text">2 Qt</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E4%BD%BF%E7%94%A8%E5%90%91%E5%AF%BC%E5%88%9B%E5%BB%BA"><span class="nav-text">2.1 使用向导创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-pro%E5%B7%A5%E7%A8%8B%E6%96%87%E4%BB%B6"><span class="nav-text">2.2 .pro工程文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-main-cpp"><span class="nav-text">2.3 main.cpp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4widget-h"><span class="nav-text">2.4widget.h</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-widget-cpp"><span class="nav-text">2.5 widget.cpp</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F"><span class="nav-text">3 第一个程序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E5%AF%B9%E8%B1%A1%E6%A0%91"><span class="nav-text">4 对象树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E5%9D%90%E6%A0%87%E4%BD%93%E7%B3%BB"><span class="nav-text">5 坐标体系</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/header-shrink.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/back2top.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/toggle-theme.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/code-block.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/libs/anime.min.js"></script>
+
+<!-- local search -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/local-search.min.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/lazyload.min.js"></script>
+
+
+<div class="pjax">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/toc.min.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/share.min.js"></script>
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

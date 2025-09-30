@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,zh-TW,default">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="cxxzsh">
+    
+    <title>
+        
+            C++的IO类 |
+        
+        cxxzsh&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/assets/blogImg/logo.jpg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"naiv.xyz","root":"/","language":["zh-CN","en","zh-TW","default"],"path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"cxxzsh's Blog","author":"cxxzsh","url":"https://naiv.xyz/","avatar":"/assets/blogImg/logo.jpg","logo":"/assets/blogImg/logo.jpg","favicon":"/assets/blogImg/logo.jpg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","about":"/about"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/cxxzsh","weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":"recovxy@gmail.com"}},"scroll":{"progress_bar":true,"percent":true,"hide_header":true},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["老大哥"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":true},"comment":{"enable":true,"use":"valine","valine":{"appid":"1PTJXbrdVcQCMR1j0JLlpHCU-gzGzoHsz","appkey":"56lf22kttbniHlMSEFsawHHc","server_urls":null,"placeholder":"Say something."},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":true},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="cxxzsh's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/assets/blogImg/logo.jpg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               cxxzsh&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                标签
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/categories">
+                                
+                                分类
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                关于
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                            标签
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories">
+                            
+                            分类
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                            关于
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        C++的IO类
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/assets/blogImg/logo.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">cxxzsh</span>
+                                
+                                    <span class="author-badge">Lv3</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2021-11-03 22:43:21</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Mon Nov 22 2021 22:16:22 GMT+0800">2021-11-22 22:16:22</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">学习记录</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/C/">C++</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.8k 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>6 分钟</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>C++不直接处理输入和输出，而是通过标准库中的类型处理IO。IO的设备可以是文件、控制台、string。为了支持这些不同类的IO处理操作，C++主要定义了三种IO类型，分别被包含在<code>iostream</code>、<code>fstream</code>、<code>sstream</code>头文件中。</p>
+<p>为了支持使用宽字符的语言，标准库定义了一组类型和对象操纵wchar_t类型的数据。</p>
+<p>以下是这三种IO库类型以及头文件：</p>
+<ul>
+<li>iostream头文件<ul>
+<li>istream（宽字符版本wistream），从流读取数据。</li>
+<li>ostream （宽字符版本wostream），向流写入数据。</li>
+<li>iostream（宽字符版本wiostream），读写流。</li>
+</ul>
+</li>
+<li>fstream头文件<ul>
+<li>ifstream（宽字符版本wifstream），从文件读取数据。</li>
+<li>ofstream （宽字符版本wofstream），向文件写入数据。</li>
+<li>fstream（宽字符版本wfstream），读写文件。</li>
+</ul>
+</li>
+<li>sstream头文件<ul>
+<li>istringstream（宽字符版本wistringstream），从string读取数据。</li>
+<li>ostringstream （宽字符版本wostringstream），向string写入数据。</li>
+<li>stringstream（宽字符版本wstringstream），读写string。</li>
+</ul>
+</li>
+</ul>
+<p>设备类型和字符大小不会影响我们要执行的IO操作。得益于继承机制，以上类型都可以使用<code>&gt;&gt;</code>、<code>&lt;&lt;</code>运算符以及<code>getline()</code>函数。</p>
+<h2 id="IO对象无拷贝或赋值"><a href="#IO对象无拷贝或赋值" class="headerlink" title="IO对象无拷贝或赋值"></a>IO对象无拷贝或赋值</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ofstream out1, out2;</span><br><span class="line">out1 = out2;	<span class="comment">//错误：不能对流对象赋值</span></span><br><span class="line"><span class="function">ofstream <span class="title">print</span><span class="params">(ofstream)</span></span>;	<span class="comment">//错误：不能初始化ofstream参数</span></span><br><span class="line">out2 = <span class="built_in">print</span>(out);		<span class="comment">//错误：不能拷贝流对象</span></span><br></pre></td></tr></table></figure>
+
+<p>由于无法拷贝IO对象，因此<strong>不能将形参或返回类型设置为流类型</strong>。通常使用<strong>引用</strong>方式传递和返回流。但传递和返回的引用不能是<code>const</code>的，因为读写IO对象会改变IO对象的状态，也就是改变了IO对象。</p>
+<h2 id="IO对象的条件状态"><a href="#IO对象的条件状态" class="headerlink" title="IO对象的条件状态"></a>IO对象的条件状态</h2><p>IO类定义了一些函数和标志位，帮助我们检查和操纵流的状态：</p>
+<ul>
+<li><code>strm::iostate</code>是一种类型，这种类型就像一串二进制位串，每个二进制位串指出了流的状态。(strm为引言中的任意一种IO类型)。</li>
+<li><code>strm::badbit</code>用来指出流已崩溃</li>
+<li><code>strm::failbit</code>用来指出一个IO操作失败了</li>
+<li><code>strm::eofbit</code>用来指出流到达了文件结束</li>
+<li><code>strm::goodbit</code>用来指出流位处于错误状态。此值保证为0。</li>
+<li><code>eof()</code>函数用于在IO对象上调用，如<code>cin.eof()</code>。如果流检测到<code>eof</code>（文件结束标志），该函数返回true。</li>
+<li><code>fail()</code>函数使用同上。如果流处于崩溃或IO操作失败的状态（即<code>failbit</code>或<code>badbit</code>置位），返回true。</li>
+<li><code>bad()</code>函数使用同上。如果流处于崩溃状态，返回true。</li>
+<li><code>good()</code>函数使用同上。如果流处于有效状态，返回true。</li>
+<li><code>clear()</code>函数使用同上。将IO对象中的所有条件状态为复位，流的状态变为有效状态，返回void。</li>
+<li><code>setstate(flags)</code>将IO对象的状态为按flags（类型为<code>strm::iostate</code>）指示的那样置位。</li>
+<li><code>rdstate()</code>函数用于在IO对象上调用,读取IO对象的状态位，返回类型为<code>strm::iostate</code>。</li>
+</ul>
+<h2 id="管理输出缓冲"><a href="#管理输出缓冲" class="headerlink" title="管理输出缓冲"></a>管理输出缓冲</h2><p>每一个输出流管理一个缓冲区，用来保存程序读写的数据。例如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="string">&quot;Hello World!&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>串”Hello World!”可能被立即打印出来，也可能被操作系统保存在缓冲区，随后打印。</p>
+<p>导致缓冲区刷新（即，数据真正写到输出设备或文件）的原因有很多：</p>
+<ul>
+<li>程序正常结束，自动刷新。</li>
+<li>缓冲区满时，自动刷新。</li>
+<li>可以使用操作符<code>endl</code>、<code>flush</code>、<code>ends</code>手动刷新缓冲区（只作用一次输出）。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="string">&quot;1&quot;</span> &lt;&lt; endl; <span class="comment">//字符串后添加换行，然后刷新缓冲区</span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;2&quot;</span> &lt;&lt; flush; <span class="comment">//仅刷新缓冲区</span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;3&quot;</span> &lt;&lt; ends;  <span class="comment">//字符串后添加一个空字符，然后刷新缓冲区。</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过操作符unitbuf设置自动刷新。不同于<code>endl</code>、<code>flush</code>、<code>ends</code>只作用于一次输出，设置了unitbuf后的输出流每输出一次都会自动刷新缓冲区。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; unitbuf;<span class="comment">//下面的语句每执行一次输出，就刷新一次缓冲区。</span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;1&quot;</span>; <span class="comment">//输出&quot;1&quot;，自动刷新缓冲区</span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;2&quot;</span>; <span class="comment">//输出&quot;2&quot;，自动刷新缓冲区</span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;3&quot;</span>; <span class="comment">//输出&quot;3&quot;，自动刷新缓冲区</span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;4&quot;</span>; <span class="comment">//输出&quot;4&quot;，自动刷新缓冲区</span></span><br><span class="line">...</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;nounitbuf&quot;</span>; <span class="comment">//回到流默认的缓冲方式</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>关联流。读写被关联的流时，关联到的流的缓冲区会被刷新（<code>tie()</code>函数括号里面的是关联到的流，调用<code>tie()</code>的流是被关联的流）。cout 和 cin默认关联在一起，使用cin读取数据时，cout的缓冲区被刷新。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="string">&quot;Fuck you!&quot;</span>; <span class="comment">//没有指定操作符，cout默认不刷新，该语句执行完后&quot;Fuck you!&quot;可能立即被输出到屏幕，也可能稍后被输出。</span></span><br><span class="line"><span class="type">int</span> i;</span><br><span class="line">cin &gt;&gt; i; <span class="comment">//cout的缓冲区被刷新，此时&quot;Fuck you!&quot;一定已经真正输出（可能在之前就已经真正输出，此时刷新缓冲区等于什么都没做）。</span></span><br></pre></td></tr></table></figure>
+
+<p>使用<code>tie()</code>函数关联流和解除关联：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cin.<span class="built_in">tie</span>(&amp;cout); <span class="comment">//有参数的tie(),参数为指向流的指针，且指针不为空，此时建立关联。</span></span><br><span class="line">cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>); <span class="comment">//有参数的tie(),且指针为空，此时解除cin和其他流的关联。</span></span><br><span class="line">cin.<span class="built_in">tie</span>(); <span class="comment">//无参tie()，返回指向cin当前关联到的流的指针。</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="文件输入输出"><a href="#文件输入输出" class="headerlink" title="文件输入输出"></a>文件输入输出</h2><h2 id="创建文件流"><a href="#创建文件流" class="headerlink" title="创建文件流"></a>创建文件流</h2><p>前面说过，所有IO类型都可以使用<code>&gt;&gt;</code>、 <code>&lt;&lt;</code>与<code>getline()</code>，除此之外，文件IO还有一些特有的操作。</p>
+<p>创建文件流：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fstream fstrm1; <span class="comment">//创建未绑定文件的文件流</span></span><br><span class="line"><span class="function">fstream <span class="title">fstrm2</span><span class="params">(s1)</span></span>; <span class="comment">//创建绑定到指定文件s1的文件流(自动调用open())。s1是string或指向c风格字符串的指针。</span></span><br><span class="line"><span class="comment">//fstream fstrm3(s2, mode); 与第二条语句类似，但指定打开文件的模式。</span></span><br></pre></td></tr></table></figure>
+
+<p>Note:</p>
+<blockquote>
+<p>当一个fstream的作用域内的代码执行完毕，fstream关联的文件被<strong>自动关闭</strong>，即fstream对象被销毁时，close()会自动调用。</p>
+</blockquote>
+<h2 id="open和close"><a href="#open和close" class="headerlink" title="open和close"></a>open和close</h2><p>使用open打开文件，close关闭文件。对一个已经打开的文件调用open会失败，并且failbit被置位。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">string file1 = <span class="string">&quot;qq.dat&quot;</span>;</span><br><span class="line">ifstream ifs;</span><br><span class="line">ifs.<span class="built_in">open</span>(file1);</span><br><span class="line"><span class="comment">//读取操作</span></span><br><span class="line">ifs.<span class="built_in">close</span>();</span><br></pre></td></tr></table></figure>
+
+<h2 id="文件模式mode"><a href="#文件模式mode" class="headerlink" title="文件模式mode"></a>文件模式mode</h2><p>常用的文件模式mode如下：</p>
+<ul>
+<li>in 只读方式打开文件</li>
+<li>out 以写方式打开文件</li>
+<li>app 每次写操作在文件末尾进行</li>
+<li>ate 打开文件后立即定位到文件末尾</li>
+<li>trunc 截断文件，即输出会覆盖文件中的原有数据。</li>
+<li>binary 以二进制方式打开文件</li>
+</ul>
+<p>同时指定多个模式时使用<code>|</code>分隔:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ofstream <span class="title">ofs</span><span class="params">(<span class="string">&quot;file1&quot;</span>, ofstream::out | ofstream::app)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>Note：</p>
+<blockquote>
+<p><code>out</code>模式隐含<code>trunc</code>即覆盖原文件，若要在原文件末尾添加数据，则需要显式指明<code>app</code>模式。</p>
+<p>若没有指定任何模式，则使用默认模式</p>
+</blockquote>
+<h2 id="string-IO"><a href="#string-IO" class="headerlink" title="string IO"></a>string IO</h2><p>stringstream独有的操作如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sstream strm;   <span class="comment">//sstream为sstream头文件中定义的类型，具体可以是istringstream等</span></span><br><span class="line"><span class="function">sstream <span class="title">strm</span><span class="params">(s)</span></span>; <span class="comment">//建立一个sstream对象，保存字符串s的一个拷贝</span></span><br><span class="line">strm.<span class="built_in">str</span>(); <span class="comment">//返回strm保存的string的拷贝</span></span><br><span class="line">strm.<span class="built_in">str</span>(s); <span class="comment">//将string s拷贝到strm</span></span><br></pre></td></tr></table></figure>
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/C/">C++</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到 QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信扫一扫"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到微博"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2021/11/23/2021-11-23-TLPI-General-IO-model/"
+                                   title="TLPI：通用的I/O模型"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">TLPI：通用的I/O模型</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2021/10/10/2021-10-10-Daily-English-Dictation/"
+                                   title="Daily English Dictation"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Daily English Dictation</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;评论
+        </div>
+        <div class="comment-plugin-fail border-box">
+    <span class="fail-tip">评论插件加载失败</span>
+    <button class="reload keep-button">点击重新加载</button>
+</div>
+<div class="comment-plugin-loading flex-center border-box">
+    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
+    <span class="load-tip">正在加载评论插件</span>
+</div>
+<script data-pjax>
+  window.KeepCommentPlugin = {}
+  window.KeepCommentPlugin.hideLoading = () => {
+    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
+    cplDom.style.display = 'none'
+  }
+  window.KeepCommentPlugin.loadFailHandle = () => {
+    window.KeepCommentPlugin.hideLoading()
+    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
+    cpfDom.style.display = 'flex'
+    cpfDom.querySelector('.reload').addEventListener('click', () => {
+      window.location.reload()
+    })
+  }
+</script>
+
+        
+            
+
+    <div class="valine-container">
+        <div id="vcomments"></div>
+        <script data-pjax
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"
+                async
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        ></script>
+        <script data-pjax
+                async
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        >
+          window.KeepCommentPlugin.initValine = () => {
+            const config = {
+              el: '#vcomments',
+              appId: '1PTJXbrdVcQCMR1j0JLlpHCU-gzGzoHsz',
+              appKey: '56lf22kttbniHlMSEFsawHHc',
+              meta: ['nick', 'mail', 'link'],
+              avatar: 'wavatar',
+              enableQQ: true,
+              placeholder: 'Say something.',
+              lang: 'zh-CN,en,zh-TW,default'.toLowerCase()
+            }
+
+            if ('') {
+              config.serverURLs = ''
+            }
+
+            if (window?.Valine) {
+              new Valine(config)
+              window.KeepCommentPlugin.hideLoading()
+            } else {
+              setTimeout(() => {
+                window.KeepCommentPlugin.initValine()
+              }, 1000)
+            }
+          }
+
+          if ('true' === 'true') {
+            setTimeout(() => {
+              window.KeepCommentPlugin.initValine()
+            }, 1200)
+          } else {
+            window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initValine)
+          }
+        </script>
+    </div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IO%E5%AF%B9%E8%B1%A1%E6%97%A0%E6%8B%B7%E8%B4%9D%E6%88%96%E8%B5%8B%E5%80%BC"><span class="nav-text">IO对象无拷贝或赋值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IO%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%8A%B6%E6%80%81"><span class="nav-text">IO对象的条件状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%A1%E7%90%86%E8%BE%93%E5%87%BA%E7%BC%93%E5%86%B2"><span class="nav-text">管理输出缓冲</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-text">文件输入输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E6%B5%81"><span class="nav-text">创建文件流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#open%E5%92%8Cclose"><span class="nav-text">open和close</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%A8%A1%E5%BC%8Fmode"><span class="nav-text">文件模式mode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string-IO"><span class="nav-text">string IO</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2025
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">cxxzsh</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">访客数</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">访问量</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IO%E5%AF%B9%E8%B1%A1%E6%97%A0%E6%8B%B7%E8%B4%9D%E6%88%96%E8%B5%8B%E5%80%BC"><span class="nav-text">IO对象无拷贝或赋值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IO%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%8A%B6%E6%80%81"><span class="nav-text">IO对象的条件状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%A1%E7%90%86%E8%BE%93%E5%87%BA%E7%BC%93%E5%86%B2"><span class="nav-text">管理输出缓冲</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-text">文件输入输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E6%B5%81"><span class="nav-text">创建文件流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#open%E5%92%8Cclose"><span class="nav-text">open和close</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%A8%A1%E5%BC%8Fmode"><span class="nav-text">文件模式mode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string-IO"><span class="nav-text">string IO</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/header-shrink.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/back2top.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/toggle-theme.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/code-block.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/libs/anime.min.js"></script>
+
+<!-- local search -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/local-search.min.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/lazyload.min.js"></script>
+
+
+<div class="pjax">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/toc.min.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/share.min.js"></script>
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,zh-TW,default">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="cxxzsh">
+    
+    <title>
+        
+            LeetCode每日一题打卡 |
+        
+        cxxzsh&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/assets/blogImg/logo.jpg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"naiv.xyz","root":"/","language":["zh-CN","en","zh-TW","default"],"path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"cxxzsh's Blog","author":"cxxzsh","url":"https://naiv.xyz/","avatar":"/assets/blogImg/logo.jpg","logo":"/assets/blogImg/logo.jpg","favicon":"/assets/blogImg/logo.jpg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","about":"/about"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/cxxzsh","weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":"recovxy@gmail.com"}},"scroll":{"progress_bar":true,"percent":true,"hide_header":true},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["老大哥"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":true},"comment":{"enable":true,"use":"valine","valine":{"appid":"1PTJXbrdVcQCMR1j0JLlpHCU-gzGzoHsz","appkey":"56lf22kttbniHlMSEFsawHHc","server_urls":null,"placeholder":"Say something."},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":true},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="cxxzsh's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/assets/blogImg/logo.jpg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               cxxzsh&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                标签
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/categories">
+                                
+                                分类
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                关于
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                            标签
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories">
+                            
+                            分类
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                            关于
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        LeetCode每日一题打卡
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/assets/blogImg/logo.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">cxxzsh</span>
+                                
+                                    <span class="author-badge">Lv3</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2021-05-14 19:34:43</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Mon Nov 22 2021 22:17:28 GMT+0800">2021-11-22 22:17:28</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">学习记录</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/LeetCode/">LeetCode</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1/">每日打卡</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>7.6k 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>33 分钟</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <p><strong>LeetCode每日一题打卡开始于2021-05-14，预计打卡至大四毕业，总共两年多，每天都会打卡，但不一定会更新到这上面。我不想再当咸鱼了（逃。</strong></p>
+<h4 id="12-整数转罗马数字"><a href="#12-整数转罗马数字" class="headerlink" title="12. 整数转罗马数字"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/integer-to-roman/" >12. 整数转罗马数字<i class="fas fa-external-link-alt"></i></a></h4><p>2021-05-14，数电课延后一周再上，上完我就要开始学了。</p>
+<p><strong>方法一：模拟</strong></p>
+<p><strong>思路</strong></p>
+<p>根据罗马数字的唯一表示法，为了表示一个给定的整数<em>num</em>，我们寻找不超过<em>num</em>的最大符号值，将<em>num</em>减去该符号值，然后继续寻找不超过<em>num</em>的最大符号值，将该符号拼接在上一个找到的符号之后，循环直至<em>num</em>为0。最后的得到的字符即为<em>num</em>的罗马数字表示。</p>
+<p>编程时，可以建立一个数值-符号对的列表<em>valueSymbols</em>，按数值从大到小排列。遍历<em>valueSymbols</em>中的每个数值-符号对，若当前数值<em>value</em>不超过<em>num</em>则从<em>num</em>中不断减去<em>value</em>，直至<em>num</em>小于<em>value</em>，然后遍历下一个数值-符号对。若遍历中<em>num</em>为0则跳出循环。</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> pair&lt;<span class="type">int</span>, string&gt; valueSymbols[] = &#123;</span><br><span class="line">    &#123;<span class="number">1000</span>, <span class="string">&quot;M&quot;</span>&#125;,</span><br><span class="line">    &#123;<span class="number">900</span>, <span class="string">&quot;CM&quot;</span>&#125;,</span><br><span class="line">    &#123;<span class="number">500</span>, <span class="string">&quot;D&quot;</span>&#125;,</span><br><span class="line">    &#123;<span class="number">400</span>, <span class="string">&quot;CD&quot;</span>&#125;,</span><br><span class="line">    &#123;<span class="number">100</span>, <span class="string">&quot;C&quot;</span>&#125;,</span><br><span class="line">    &#123;<span class="number">90</span>, <span class="string">&quot;XC&quot;</span>&#125;,</span><br><span class="line">    &#123;<span class="number">50</span>, <span class="string">&quot;L&quot;</span>&#125;,</span><br><span class="line">    &#123;<span class="number">40</span>, <span class="string">&quot;XL&quot;</span>&#125;,</span><br><span class="line">    &#123;<span class="number">10</span>, <span class="string">&quot;X&quot;</span>&#125;,</span><br><span class="line">    &#123;<span class="number">9</span>, <span class="string">&quot;IX&quot;</span>&#125;,</span><br><span class="line">    &#123;<span class="number">5</span>, <span class="string">&quot;V&quot;</span>&#125;,</span><br><span class="line">    &#123;<span class="number">4</span>, <span class="string">&quot;IV&quot;</span>&#125;,</span><br><span class="line">    &#123;<span class="number">1</span>, <span class="string">&quot;I&quot;</span>&#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">intToRoman</span><span class="params">(<span class="type">int</span> num)</span> </span>&#123;</span><br><span class="line">        string roman;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">const</span> <span class="keyword">auto</span> &amp;[value, symbol] : valueSymbols)&#123; <span class="comment">//遍历数值-符号对</span></span><br><span class="line">            <span class="keyword">while</span>(num&gt;=value)&#123;	<span class="comment">//找到不超过当前数字的最大符号值</span></span><br><span class="line">                num -= value;</span><br><span class="line">                roman += symbol;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(num == <span class="number">0</span>) <span class="keyword">break</span>; <span class="comment">//当数字为0时退出循环</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> roman;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li><p>时间复杂度：<em>O</em>(1)。由于 <em>valueSymbols</em> 长度是固定的，且这 13 字符中的每个字符的出现次数均不会超过 3，因此循环次数有一个确定的上限。对于本题给出的数据范围，循环次数不会超过 15 次。</p>
+</li>
+<li><p>空间复杂度：<em>O</em>(1)。</p>
+</li>
+</ul>
+<h4 id="13-罗马数字转整数"><a href="#13-罗马数字转整数" class="headerlink" title="13. 罗马数字转整数"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/roman-to-integer/" >13. 罗马数字转整数<i class="fas fa-external-link-alt"></i></a></h4><p>今天是2021-05-15，周六，可是为什么还有实验课啊，滑动变阻器坏了，实验没做出来，躺平~</p>
+<p><strong>方法一：模拟</strong></p>
+<p><strong>思路</strong></p>
+<p>通常情况下，罗马数字中小的数字在大的数字的右边。若输入的字符串满足该情况，那么可以将每个字符视作一个单独的值，累加每个字符对应的数值即可。</p>
+<p>例如<code>XXVII</code>可视作<code>X</code> + <code>X</code>+ <code>V</code>+ <code>I</code>+ <code>I</code> &#x3D; 10 + 10 + 5 + 1 + 1 &#x3D; 27。</p>
+<p>若存在小的数字在大的数字的左边的情况，根据规则需要减去小的数字。对于这种情况，我们也可以将每个字符视作一个单独的值，若一个数字的右侧的数字比它大，则该数字的符号取反。</p>
+<p>例如<code>XIV</code>可视作 <code>X</code> - <code>I</code> + <code>V</code>  &#x3D; 10 - 1 + 5 &#x3D; 14。</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">romanToInt</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">    unordered_map&lt;<span class="type">char</span>, <span class="type">int</span>&gt; symbolValues = &#123;</span><br><span class="line">        &#123;<span class="string">&#x27;I&#x27;</span>, <span class="number">1</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;V&#x27;</span>, <span class="number">5</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;X&#x27;</span>, <span class="number">10</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;L&#x27;</span>, <span class="number">50</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;C&#x27;</span>, <span class="number">100</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;D&#x27;</span>, <span class="number">500</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;M&#x27;</span>, <span class="number">1000</span>&#125;,</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> n = s.<span class="built_in">length</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="type">int</span> value = symbolValues[s[i]];</span><br><span class="line">        <span class="keyword">if</span>(i&lt;n<span class="number">-1</span> &amp;&amp; value &lt; symbolValues[s[i<span class="number">+1</span>]]) <span class="comment">//判断后面一个字符对应的值是否比当前这个的值大</span></span><br><span class="line">            ans -= value;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            ans += value;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li><p>时间复杂度：<em>O</em>(<em>n</em>)。其中n是字符串s的长度。</p>
+</li>
+<li><p>空间复杂度：<em>O</em>(<em>1</em>)。</p>
+</li>
+</ul>
+<h4 id="421-数组中两个数的最大异或值"><a href="#421-数组中两个数的最大异或值" class="headerlink" title="421. 数组中两个数的最大异或值"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-xor-of-two-numbers-in-an-array/" >421. 数组中两个数的最大异或值<i class="fas fa-external-link-alt"></i></a></h4><p>2021-05-16，周日，玩了一上午的OW（破坏球真好玩）。</p>
+<p><strong>方法一：暴力</strong></p>
+<p>题目要求在<em>O</em>(n)的时间复杂度下完成，但暴力解法时间复杂度会上升到<em>O</em>(n^2)，用C++就会超时，而Java却AC了(不是很懂.jpg)。</p>
+<p><strong>代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">findMaximumXOR</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">ret</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i; j &lt; nums.length; j++) &#123;</span><br><span class="line">                ret = Math.max(nums[i]^nums[j], ret);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>方法二：哈希表</strong></p>
+<p>这个方法来自官方题解，自己想不出别的了。</p>
+<p><strong>思路</strong></p>
+<p>设最大异或值为m。[从高到低依次求m的每一个bit]</p>
+<p>设x(k)表示x的从高到低的前k位。</p>
+<p>如何求m？已经求出m(k-1)，判断第k是否为1：设m第k位可以为1的条件是：存在x和y于nums，满足m(k)&#x3D;x(k)^y(k)，否则m第k位是0。</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findMaximumXOR</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> m = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> k=<span class="number">30</span>; k&gt;=<span class="number">0</span>; --k)&#123;  <span class="comment">// 从高到低依次求m的每一个bit。</span></span><br><span class="line">            <span class="comment">//保存num(k)</span></span><br><span class="line">            unordered_set&lt;<span class="type">int</span>&gt; set;   </span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> num: nums)&#123;</span><br><span class="line">                set.<span class="built_in">insert</span>(num&gt;&gt;k);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 检查是否存在x和y于nums，满足m(k)=x(k)^y(k)</span></span><br><span class="line">            m = (m&lt;&lt;<span class="number">1</span>)<span class="number">+1</span>;   <span class="comment">//假设当前位为1</span></span><br><span class="line">            <span class="type">bool</span> canBe1 = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> num: nums)&#123;</span><br><span class="line">                <span class="keyword">if</span> (set.<span class="built_in">count</span>((num&gt;&gt;k)^m))&#123;</span><br><span class="line">                    canBe1 = <span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (!canBe1) --m;   <span class="comment">// 不存在存在x和y于nums，说明m不能为1</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> m;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="993-二叉树的堂兄弟节点"><a href="#993-二叉树的堂兄弟节点" class="headerlink" title="993. 二叉树的堂兄弟节点"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/cousins-in-binary-tree/" >993. 二叉树的堂兄弟节点<i class="fas fa-external-link-alt"></i></a></h4><p>2021-05-17，打卡第4天，上午有乒乓球课，玩得很过瘾啦~</p>
+<p><strong>前言</strong></p>
+<p>要想判断两个节点 <code>x</code>和 <code>y</code> 是否为堂兄弟节点，我们就需要求出这两个节点分别的「深度」以及「父节点」。</p>
+<p>因此，我们可以从根节点开始，对树进行一次遍历，在遍历的过程中维护「深度」以及「父节点」这两个信息。当我们遍历到 x 或 y 节点时，就将信息记录下来；当这两个节点都遍历完成了以后，我们就可以退出遍历的过程，判断它们是否为堂兄弟节点了。</p>
+<p>常见的遍历方法有两种：深度优先搜索和广度优先搜索。</p>
+<p><strong>方法一：深度优先搜索</strong></p>
+<p><strong>思路与算法</strong></p>
+<p>我们只需要在深度优先搜索的递归函数中增加表示「深度」以及「父节点」的两个参数即可。</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">//x的信息</span></span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    TreeNode* x_parent;</span><br><span class="line">    <span class="type">int</span> x_depth;</span><br><span class="line">    <span class="type">bool</span> x_found = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//y的信息</span></span><br><span class="line">    <span class="type">int</span> y;</span><br><span class="line">    TreeNode* y_parent;</span><br><span class="line">    <span class="type">int</span> y_depth;</span><br><span class="line">    <span class="type">bool</span> y_found = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isCousins</span><span class="params">(TreeNode*&amp; root, <span class="type">int</span>&amp; x, <span class="type">int</span>&amp; y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;x = x;</span><br><span class="line">        <span class="keyword">this</span>-&gt;y = y;</span><br><span class="line">        <span class="built_in">dfs</span>(root, <span class="number">0</span> ,<span class="literal">nullptr</span>);</span><br><span class="line">        <span class="keyword">return</span> x_depth ==y_depth &amp;&amp; x_parent != y_parent;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(TreeNode* node, <span class="type">int</span> depth, TreeNode* parent)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(node==<span class="literal">nullptr</span>) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span>(node-&gt;val == x) <span class="built_in">tie</span>(x_parent, x_depth, x_found) = <span class="built_in">tuple</span>(parent, depth, <span class="literal">true</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(node-&gt;val == y) <span class="built_in">tie</span>(y_parent, y_depth, y_found) = <span class="built_in">tuple</span>(parent, depth, <span class="literal">true</span>); </span><br><span class="line">        </span><br><span class="line">        <span class="comment">//找到了两个节点就提前退出遍历，但不退出对最坏情况下的时间复杂度也不会有影响。</span></span><br><span class="line">        <span class="keyword">if</span>(x_found &amp;&amp; y_found) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">dfs</span>(node-&gt;left, depth<span class="number">+1</span>, node);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(x_found &amp;&amp; y_found) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">dfs</span>(node-&gt;right, depth<span class="number">+1</span>, node);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<p>时间复杂度：O(n)，其中 n 是树中的节点个数。在最坏情况下，我们需要遍历整棵树，时间复杂度为 O(n)。</p>
+<p>空间复杂度：O(n)，即为深度优先搜索的过程中需要使用的栈空间。在最坏情况下，树呈现链状结构，递归的深度为 O(n)。</p>
+<p><strong>方法二：广度优先搜索</strong></p>
+<p><strong>思路来自<a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/u/qiank/" >Qian<i class="fas fa-external-link-alt"></i></a></strong></p>
+<p>因为在BFS中，我们使用的是层序遍历，如果每次遍历一层，那么这一层的元素的深度是相同的。</p>
+<p>因此我们在每一层，看看是否有出现 x 和 y，其中分为以下三种情况：</p>
+<ul>
+<li><p><code>x</code> 和 <code>y</code>都没出现 → 那只能往下一层继续找了</p>
+</li>
+<li><p><code>x</code> 和 <code>y</code> 只出现一个 → 两个元素的深度不同，不可能为兄弟，返回<code>false</code></p>
+</li>
+<li><p><code>x</code> 和 <code>y</code>都出现了，好耶，但是还不够好</p>
+<ul>
+<li><p><code>x</code> 和 <code>y</code> 父节点相同 → 不是堂兄弟，是亲兄弟，不行，返回<code>false</code></p>
+</li>
+<li><p><code>x</code> 和 <code>y</code>父节点不同 → 满足题目条件了，好耶，返回<code>true</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>众所周知，BFS需要用到队列，那么我们应该如何设计队列的数据类型？<br>在这里，我采用了 <code>pair&lt;TreeNode*, TreeNode*&gt;</code>（其实<code>pair&lt;TreeNode*, int&gt;</code>也可以），其中<code>pair</code>中，第一个元素记录指向当前结点的指针，第二个元素记录指向当前结点的父结点的指针，这样就可以完美应对上面所说的三种情况了。</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">using</span> PTT = pair&lt;TreeNode*, TreeNode*&gt;;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isCousins</span><span class="params">(TreeNode* root, <span class="type">int</span> x, <span class="type">int</span> y)</span></span>&#123;</span><br><span class="line">        queue&lt;PTT&gt; q; <span class="comment">//q.first记录当前节点的指针，q.second记录当前节点的父节点的指针</span></span><br><span class="line">        q.<span class="built_in">push</span>(&#123;root, <span class="literal">nullptr</span>&#125;);</span><br><span class="line">        <span class="keyword">while</span>(!q.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            <span class="type">int</span> n = q.<span class="built_in">size</span>(); <span class="comment">//记录当前层需要遍历的节点个数</span></span><br><span class="line">            vector&lt;TreeNode*&gt; rec_parent; <span class="comment">//记录每层找到的x,y的父节点</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123; <span class="comment">//处理每层节点</span></span><br><span class="line">                <span class="keyword">auto</span> [cur, parent] = q.<span class="built_in">front</span>(); <span class="comment">//每循环一次就更新一次当前将要遍历的节点</span></span><br><span class="line">                q.<span class="built_in">pop</span>(); <span class="comment">//取得这个节点后将其从队头弹出</span></span><br><span class="line">                <span class="keyword">if</span>(cur-&gt;val == x || cur-&gt;val == y) <span class="comment">//检查当前节点的值是否与x,y之一相等</span></span><br><span class="line">                    rec_parent.<span class="built_in">push_back</span>(parent);</span><br><span class="line">                <span class="keyword">if</span>(cur-&gt;left) q.<span class="built_in">push</span>(&#123;cur-&gt;left, cur&#125;); <span class="comment">//检查当前节点的左子节点是否存在，存在就加入队列，同时记录其父节点</span></span><br><span class="line">                <span class="keyword">if</span>(cur-&gt;right) q.<span class="built_in">push</span>(&#123;cur-&gt;right, cur&#125;);<span class="comment">//检查当前节点的右子节点是否存在，存在就加入队列，同时记录其父节点</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//遍历完一层之后检查是否找到了x,y</span></span><br><span class="line">            <span class="keyword">if</span>(rec_parent.<span class="built_in">size</span>() == <span class="number">0</span>) <span class="comment">//x,y都没出现</span></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(rec_parent.<span class="built_in">size</span>() == <span class="number">1</span>) <span class="comment">//x,y出现其一</span></span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(rec_parent.<span class="built_in">size</span>() == <span class="number">2</span>) <span class="comment">//x,y都出现，但还需判断父节点是否相同</span></span><br><span class="line">                <span class="keyword">return</span> rec_parent[<span class="number">0</span>] != rec_parent[<span class="number">1</span>]; <span class="comment">//父节点不同则返回true</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li><p>时间复杂度：O(n)，其中 n 是树中的节点个数。在最坏情况下，我们需要遍历整棵树，时间复杂度为 O(n)。</p>
+</li>
+<li><p>空间复杂度：O(n)，即为广度优先搜索的过程中需要使用的队列空间。</p>
+</li>
+</ul>
+<h4 id="1442-形成两个异或相等数组的三元组数目"><a href="#1442-形成两个异或相等数组的三元组数目" class="headerlink" title="1442. 形成两个异或相等数组的三元组数目"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/" >1442. 形成两个异或相等数组的三元组数目<i class="fas fa-external-link-alt"></i></a></h4><p>2021-05-18，轻松的一天，只有一节德语课。</p>
+<p><strong>前言</strong></p>
+<p>记S(n)  , n&#x3D;0,1,2,3<br>$$<br>S(0) &#x3D; 0, S(1) &#x3D; arr[0], S(2) &#x3D; arr[0] ⊕ arr[1], S(n) &#x3D; arr[0] ⊕ arr[1] ⊕ … ⊕ arr[n-1]<br>$$<br>为该数组的<strong>异或前缀和</strong>，由异或的性质可知：<br>$$<br>a &#x3D; S(i-1) ⊕ S(j-1) &#x3D; arr[i] ⊕ arr[i+1] ⊕ arr[i+2] ⊕ … ⊕  arr[j-1]<br>$$</p>
+<p>$$<br>b &#x3D; S(j-1) ⊕ S(k) &#x3D; arr[j-1] ⊕ arr[j] ⊕ arr[j+1] ⊕ … ⊕  arr[k]<br>$$</p>
+<p><strong>方法一：暴力</strong></p>
+<p><strong>思路</strong></p>
+<p>依次枚举<code>i</code>，<code>j</code>，<code>k</code>的值。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">countTriplets</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = arr.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">pre_arr</span><span class="params">(n<span class="number">+1</span>)</span></span>; <span class="comment">//保存异或前缀和</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; n<span class="number">+1</span>; i++)&#123; <span class="comment">//从1开始存贮异或前缀和方便理解</span></span><br><span class="line">            pre_arr[i] = pre_arr[i<span class="number">-1</span>] ^ arr[i<span class="number">-1</span>];  </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> a,b,ans=<span class="number">0</span>;   </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=i<span class="number">+1</span>;j&lt;=n;j++)</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> k=j;k&lt;=n;k++)&#123;</span><br><span class="line">                    a = pre_arr[i<span class="number">-1</span>] ^ pre_arr[j<span class="number">-1</span>];</span><br><span class="line">                    b = pre_arr[j<span class="number">-1</span>] ^ pre_arr[k];    </span><br><span class="line">                    <span class="keyword">if</span> (a==b) ans++; <span class="comment">//ans += a==b;</span></span><br><span class="line">                &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<p>时间复杂度：O(n^3)，其中 n 是数组 arr 的长度。</p>
+<p>空间复杂度：O(n)</p>
+<p><strong>方法二：二重循环</strong></p>
+<p><strong>思路</strong></p>
+<p>由异或的性质可知，<br>$$<br>a ⊕ b &#x3D; 0时，arr[i] ⊕ … ⊕ arr[j-1] ⊕ arr[j] ⊕ … ⊕ arr[k] &#x3D; 0<br>$$<br>因此在 i 之前的前缀异或和到 k 时不会变，即<code>pre_arr[i-1] = pre_arr[k]</code>。</p>
+<p>其另一点重点在于在区间 <code>[i, k]</code>内 j在哪并不重要, 因为无论<code> j</code>在哪，<code>i</code>到<code>k</code>的异或值都等于 0，不影响结果。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">countTriplets</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = arr.<span class="built_in">size</span>(), ans = <span class="number">0</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">pre_arr</span><span class="params">(n<span class="number">+1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n<span class="number">+1</span>;i++)</span><br><span class="line">            pre_arr[i] = pre_arr[i<span class="number">-1</span>] ^ arr[i<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> k=i<span class="number">+1</span>;k&lt;=n;k++)&#123;</span><br><span class="line">                <span class="keyword">if</span>((pre_arr[i<span class="number">-1</span>] ^ pre_arr[k]) == <span class="number">0</span>) <span class="comment">//pre_arr[i-1] == pre_arr[k]</span></span><br><span class="line">                    ans += k-i;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<p>时间复杂度：O(n^2)</p>
+<p>空间复杂度：O(n)</p>
+<h4 id="1738-找出第-K-大的异或坐标值"><a href="#1738-找出第-K-大的异或坐标值" class="headerlink" title="1738. 找出第 K 大的异或坐标值"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-kth-largest-xor-coordinate-value/" >1738. 找出第 K 大的异或坐标值<i class="fas fa-external-link-alt"></i></a></h4><p>2021-05-19，一看就会，一写就错是我了。</p>
+<p><strong>思路</strong>（来自官方题解）</p>
+<p>我们用 ⊕ 表示按位异或运算。</p>
+<p>由于「按位异或运算」与「加法运算」有着十分相似的性质，它们都满足交换律：<br>$$<br>a⊕b&#x3D;b⊕a<br>$$<br>以及结合律：<br>$$<br>(a⊕b)⊕c&#x3D;a⊕(b⊕c)<br>$$<br>因此我们可以使用「前缀和」这一技巧对按位异或运算的结果进行维护。由于本题中给定的矩阵 <code>matrix</code> 是二维的，因此我们需要使用二维前缀和。</p>
+<p>设二维前缀和 <code>pre(i,j)</code> 表示矩阵 <code>matrix</code> 中所有满足 <code>0≤x&lt;i</code> 且 <code>0≤y&lt;j</code> 的元素执行按位异或运算的结果 。与一维前缀和类似，要想快速得到 <code>pre(i,j)</code>，我们需要已经知道 <code>pre(i−1,j)</code>，<code>pre(i,j−1)</code> 以及<code>pre(i−1,j−1)</code> 的结果，即：</p>
+<p>$$<br>pre[i][j] &#x3D; pre[i-1][j]⊕pre[i][j-1]⊕pre[i-1][j-1]⊕matrix[i-1][j-1];<br>$$<br>当我们将 <code>pre(i−1,j)</code> 和 <code>pre(i,j−1)</code> 进行按位异或运算后，由于对一个数 x 异或两次 <code>y</code>，结果仍然为 <code>x</code> 本身，即：<br>$$<br>x⊕y⊕y&#x3D;x<br>$$<br>因此 <code>pre(i−1,j−1)</code> <strong>对应区域的按位异或结果被抵消</strong>，我们需要将其补上，并对位置 <code>(i,j)</code> 的元素进行按位异或运算，这样就得到了 <code>pre(i,j)</code>。</p>
+<p>在得到了所有的二维前缀和之后，我们只需要找出其中第 k 大的元素即为答案。这一步我们可以直接将 <code>mn</code> 个二维前缀和进行排序后返第 <code>k</code> 大的元素。</p>
+<p><strong>细节</strong></p>
+<p>在二维前缀和的计算过程中，如果我们正在计算首行或者首列，即 <code>i=0</code> 或 <code>j=0</code>，此时例如 <code>pre(i−1,j−1)</code> 是一个超出下标范围的结果。因此我们可以使用一个 <code>(m+1)×(n+1)</code> 的二维矩阵，将<strong>首行和首列空出来赋予默认值</strong> <code>0</code>，并使用接下来的 <code>m</code> 行和 <code>n</code> 列存储二维前缀和，这样就不必进行下标范围的判断了。</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">kthLargestValue</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> m = matrix.<span class="built_in">size</span>(), n = matrix[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">pre</span>(m<span class="number">+1</span>, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(n<span class="number">+1</span>));</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; results;</span><br><span class="line">        <span class="comment">//求出二维异或前缀和，并用一个一维向量存贮结果</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">                pre[i][j] = pre[i<span class="number">-1</span>][j]^pre[i][j<span class="number">-1</span>]^pre[i<span class="number">-1</span>][j<span class="number">-1</span>]^matrix[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">                results.<span class="built_in">push_back</span>(pre[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="built_in">sort</span>(results.<span class="built_in">begin</span>(),results.<span class="built_in">end</span>(),<span class="built_in">greater</span>&lt;<span class="type">int</span>&gt;()); <span class="comment">//对异或前缀和从小到大排序</span></span><br><span class="line">        <span class="keyword">return</span> results[k<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li><p>时间复杂度：O(mnlog(mn))。计算二维前缀和的时间复杂度为 O(mn)，排序的时间复杂度为 O(mnlog(mn))，因此总时间复杂度为 O(mnlog(mn))。</p>
+</li>
+<li><p>空间复杂度：O(mn)，即为存储二维前缀和需要的空间。</p>
+</li>
+</ul>
+<h4 id="692-前K个高频单词"><a href="#692-前K个高频单词" class="headerlink" title="692. 前K个高频单词"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/top-k-frequent-words/" >692. 前K个高频单词<i class="fas fa-external-link-alt"></i></a></h4><p>2021-5-20，有人相爱，有人夜里开车看海，有人520刷LeetCode (:</p>
+<p><strong>方法一：哈希表 + 排序</strong><br><strong>思路及算法</strong></p>
+<p>我们可以预处理出每一个单词出现的频率，然后依据每个单词出现的频率降序排序，最后返回前 <code>k</code> 个字符串即可。</p>
+<p>具体地，我们利用哈希表记录每一个字符串出现的频率，然后将哈希表中所有字符串进行排序，排序时，如果两个字符串出现频率相同，那么我们让两字符串中字典序较小的排在前面，否则我们让出现频率较高的排在前面。最后我们只需要保留序列中的前 <code>k</code> 个字符串即可。</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">topKFrequent</span><span class="params">(vector&lt;string&gt;&amp; words, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;string, <span class="type">int</span>&gt; map;</span><br><span class="line">        vector&lt;string&gt; rec;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; word:words)</span><br><span class="line">            map[word]++;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; [key, value] : map)&#123;</span><br><span class="line">            rec.<span class="built_in">emplace_back</span>(key);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">sort</span>(rec.<span class="built_in">begin</span>(),rec.<span class="built_in">end</span>(), [&amp;](string&amp; a, string&amp; b)&#123;</span><br><span class="line">            <span class="keyword">if</span>(map[a]==map[b]) <span class="keyword">return</span> a &lt; b;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> map[a] &gt; map[b];</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        sort(rec.begin(), rec.end(), [&amp;](string&amp; a, string&amp; b) -&gt; bool &#123;</span></span><br><span class="line"><span class="comment">            return cnt[a] == cnt[b] ? a &lt; b : cnt[a] &gt; cnt[b];</span></span><br><span class="line"><span class="comment">        &#125;);     </span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line"></span><br><span class="line">        rec.<span class="built_in">erase</span>(rec.<span class="built_in">begin</span>()+k,rec.<span class="built_in">end</span>()); <span class="comment">//擦除 第k个出现次数最多的单词 后面的所有单词,即剩下了前k个</span></span><br><span class="line">        <span class="keyword">return</span> rec;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li><p>时间复杂度：<code>O(l×n+l×mlogm)</code>，其中 <code>n</code> 表示给定字符串序列的长度，<code>l</code> 表示字符串的平均长度，<code>m</code> 表示实际字符串种类数。我们需要 <code>l×n</code> 的时间将字符串插入到哈希表中，以及 <code>l × mlogm</code> 的时间完成字符串比较（最坏情况下所有字符串出现频率都相同，我们需要将它们两两比较）。</p>
+</li>
+<li><p>空间复杂度：<code>O(l×m)</code>，其中 <code>l</code> 表示字符串的平均长度，<code>m</code> 表示实际字符串种类数。哈希表和生成的排序数组空间占用均为 <code>O(l×m)</code>。</p>
+</li>
+</ul>
+<h4 id="1035-不相交的线"><a href="#1035-不相交的线" class="headerlink" title="1035. 不相交的线"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/uncrossed-lines/" >1035. 不相交的线<i class="fas fa-external-link-alt"></i></a></h4><p>2021-5-21，对于今天来说，也许这题很奇怪（不相交</p>
+<p><strong>思路：动态规划</strong></p>
+<p>定义<code>dp[i][j]</code>表示数组<code>nums1</code>的前<code>i</code>个元素和<code>nums2</code>的前j个元素所能绘制的最大连接数，如果要求<code>dp[i][j]</code>，我们首先判断<code>nums1</code>的第<code>i</code>个元素和<code>nums2</code>的第<code>j</code>个元素是否相等</p>
+<p>如果相等，说明<code>nums1</code>的第<code>i</code>个元素可以和<code>nums2</code>的第j个元素可以连成一条线，这个时候<code>nums1</code>的前<code>i</code>个元素和<code>nums2</code>的前j个元素所能绘制的最大连接数就是<code>nums1</code>的前<code>i-1</code>个元素和<code>nums2</code>的前<code>j-1</code>个元素所能绘制的最大连接数加<code>1</code>，也就是<code>dp[i][j]=dp[i-1][j-1]+1</code>;</p>
+<p>如果不相等，我们就把<code>nums1</code>去掉一个元素，计算<code>nums1</code>的前<code>i-1</code>个元素和<code>nums2</code>的前j个元素能绘制的最大连接数，也就是<code>dp[i-1][j]</code>，或者把<code>nums2</code>去掉一个元素，计算<code>nums2</code>的前<code>j-1</code>个元素和<code>nums1</code>的前<code>i</code>个元素能绘制的最大连接数，也就是<code>dp[i][j-1]</code>，这两种情况我们取最大的即可，所以我们可以找出递推公式：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(nums[i] == nums[j])</span><br><span class="line">    dp[i][j] = dp[i<span class="number">-1</span>][j<span class="number">-1</span>] + <span class="number">1</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    dp[i][j] = <span class="built_in">max</span>(dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>]);</span><br></pre></td></tr></table></figure>
+
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxUncrossedLines</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums1, vector&lt;<span class="type">int</span>&gt;&amp; nums2)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> m = nums<span class="number">1.</span><span class="built_in">size</span>(), n = nums<span class="number">2.</span><span class="built_in">size</span>();</span><br><span class="line">        <span class="comment">//这里为了方便计算，减少一些边界条件的判断，把dp的宽高都增加1</span></span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">dp</span>(m + <span class="number">1</span>, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(n + <span class="number">1</span>));</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; ++i)</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; ++j)</span><br><span class="line">                <span class="comment">//下面是递推公式</span></span><br><span class="line">                <span class="keyword">if</span> (nums1[i - <span class="number">1</span>] == nums2[j - <span class="number">1</span>])</span><br><span class="line">                    dp[i][j] = dp[i - <span class="number">1</span>][j - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    dp[i][j] = <span class="built_in">max</span>(dp[i][j - <span class="number">1</span>], dp[i - <span class="number">1</span>][j]);</span><br><span class="line">        <span class="keyword">return</span> dp[m][n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li><p>时间复杂度：O(mn)，其中 m 和 n 分别是数组 nums1和 nums2 的长度。二维数组 dp 有 m+1 行和  n+1 列，需要对 dp 中的每个元素进行计算。</p>
+</li>
+<li><p>空间复杂度：O(mn)，其中 m 和 n 分别是数组 nums1和 nums2 的长度。创建了 m+1 行 n+1 列的二维数组 dp。</p>
+</li>
+</ul>
+<h4 id="810-黑板异或游戏"><a href="#810-黑板异或游戏" class="headerlink" title="810. 黑板异或游戏"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/chalkboard-xor-game/" >810. 黑板异或游戏<i class="fas fa-external-link-alt"></i></a></h4><p>2021-5-22，一会儿是假新闻，一会儿又是证实，不是很懂央视的操作，袁老一路走好！</p>
+<p><strong>思路</strong></p>
+<p>要什么思路，我可不会！</p>
+<p><strong>代码</strong></p>
+<p>你问我代码哪来的？当然是CV啦~</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">xorGame</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums.<span class="built_in">size</span>() % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> xorsum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> num : nums) &#123;</span><br><span class="line">            xorsum ^= num;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> xorsum == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">作者：LeetCode-Solution</span><br><span class="line">链接：https:<span class="comment">//leetcode-cn.com/problems/chalkboard-xor-game/solution/hei-ban-yi-huo-you-xi-by-leetcode-soluti-eb0c/</span></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li><p>时间复杂度：O(n)，其中 n 是数组 nums 的长度。最坏情况下，需要遍历数组一次，计算全部元素的异或结果。</p>
+</li>
+<li><p>空间复杂度：O(1)。</p>
+</li>
+</ul>
+<h4 id="1707-与数组中元素的最大异或值"><a href="#1707-与数组中元素的最大异或值" class="headerlink" title="1707. 与数组中元素的最大异或值"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-xor-with-an-element-from-array/" >1707. 与数组中元素的最大异或值<i class="fas fa-external-link-alt"></i></a></h4><p>2021-5-23，一看困难，又是异或，那我走？</p>
+<p><strong>代码</strong></p>
+<p>CV啦~</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Trie</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> L = <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line">    Trie* children[<span class="number">2</span>] = &#123;&#125;;</span><br><span class="line">    <span class="type">int</span> min = INT_MAX;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(<span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        Trie* node = <span class="keyword">this</span>;</span><br><span class="line">        node-&gt;min = std::<span class="built_in">min</span>(node-&gt;min, val);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = L - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">            <span class="type">int</span> bit = (val &gt;&gt; i) &amp; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (node-&gt;children[bit] == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">                node-&gt;children[bit] = <span class="keyword">new</span> <span class="built_in">Trie</span>();</span><br><span class="line">            &#125;</span><br><span class="line">            node = node-&gt;children[bit];</span><br><span class="line">            node-&gt;min = std::<span class="built_in">min</span>(node-&gt;min, val);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">getMaxXorWithLimit</span><span class="params">(<span class="type">int</span> val, <span class="type">int</span> limit)</span> </span>&#123;</span><br><span class="line">        Trie* node = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">if</span> (node-&gt;min &gt; limit) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = L - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">            <span class="type">int</span> bit = (val &gt;&gt; i) &amp; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (node-&gt;children[bit ^ <span class="number">1</span>] != <span class="literal">nullptr</span> &amp;&amp; node-&gt;children[bit ^ <span class="number">1</span>]-&gt;min &lt;= limit) &#123;</span><br><span class="line">                ans |= <span class="number">1</span> &lt;&lt; i;</span><br><span class="line">                bit ^= <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            node = node-&gt;children[bit];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">maximizeXor</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;nums, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; &amp;queries)</span> </span>&#123;</span><br><span class="line">        Trie* t = <span class="keyword">new</span> <span class="built_in">Trie</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> val : nums) &#123;</span><br><span class="line">            t-&gt;<span class="built_in">insert</span>(val);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> numQ = queries.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">ans</span><span class="params">(numQ)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; numQ; ++i) &#123;</span><br><span class="line">            ans[i] = t-&gt;<span class="built_in">getMaxXorWithLimit</span>(queries[i][<span class="number">0</span>], queries[i][<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1190-反转每对括号间的子串"><a href="#1190-反转每对括号间的子串" class="headerlink" title="1190. 反转每对括号间的子串"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-substrings-between-each-pair-of-parentheses/" >1190. 反转每对括号间的子串<i class="fas fa-external-link-alt"></i></a></h4><p>2021-05-26，连着CV了好几天，我是废物，我是废物，我是废物。今天终于可以重拳出击了嘿嘿~</p>
+<p><strong>方法一：栈</strong><br><strong>思路及算法</strong></p>
+<p>对于括号序列相关的题目，通用的解法是使用递归或栈。本题中我们将使用栈解决。</p>
+<p>我们从左到右遍历该字符串，使用字符串 str 记录当前层所遍历到的小写英文字母。对于当前遍历的字符：</p>
+<p>如果是左括号，将 str 插入到栈中，并将 str 置为空，进入下一层；</p>
+<p>如果是右括号，则说明遍历完了当前层，需要将 str 反转，返回给上一层。具体地，将栈顶字符串弹出，然后将反转后的 str 拼接到栈顶字符串末尾，将结果赋值给 str。</p>
+<p>如果是小写英文字母，将其加到 str 末尾。</p>
+<p>注意到我们仅在遇到右括号时才进行字符串处理，这样可以保证我们是按照从括号内到外的顺序处理字符串。</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">reverseParentheses</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        stack&lt;string&gt; stk;</span><br><span class="line">        string str;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; ch:s)&#123;</span><br><span class="line">            <span class="keyword">if</span>(ch==<span class="string">&#x27;(&#x27;</span>)&#123;</span><br><span class="line">                stk.<span class="built_in">push</span>(str);</span><br><span class="line">                str = <span class="string">&quot;&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(ch == <span class="string">&#x27;)&#x27;</span>)&#123;</span><br><span class="line">                <span class="built_in">reverse</span>(str.<span class="built_in">begin</span>(),str.<span class="built_in">end</span>());</span><br><span class="line">                str = stk.<span class="built_in">top</span>() + str;</span><br><span class="line">                stk.<span class="built_in">pop</span>();       </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                str.<span class="built_in">push_back</span>(ch);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> str;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li><p>时间复杂度：O(n^2)，其中 n 为字符串的长度。栈的最大深度为 O(n)，每一层处理的时间复杂度主要为反转的时间复杂度，为 O(n)，因此总时间复杂度为 O(n^2)。</p>
+</li>
+<li><p>空间复杂度：O(n)，其中 n 为字符串的长度。对于任意时刻，字符串中的任意一个字符至多只被栈中的一个位置包含一次。</p>
+</li>
+</ul>
+<h4 id="461-汉明距离"><a href="#461-汉明距离" class="headerlink" title="461. 汉明距离"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/hamming-distance/" >461. 汉明距离<i class="fas fa-external-link-alt"></i></a></h4><p>2021-05-27，一觉醒来十点半，乍看是道简单题，我直接重拳出击。</p>
+<p><strong>方法一：位计数</strong></p>
+<p>C++（以及其他语言）中内置了计算二进制表达中 1 的数量的函数。在工程中，我们应该直接使用内置函数，但这里我们暂不使用。</p>
+<p><strong>__builtin_popcount(x ^ y)；</strong></p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">hammingDistance</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> t,res=<span class="number">0</span>;</span><br><span class="line">        t = x^y;</span><br><span class="line">        <span class="keyword">while</span>(t)&#123;</span><br><span class="line">            <span class="keyword">if</span>(t%<span class="number">2</span>==<span class="number">1</span>) res++;</span><br><span class="line">            t/=<span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li><p>时间复杂度：O(logC)，其中 C是元素的数据范围，在本题中 logC&#x3D;log2^31&#x3D;31。</p>
+</li>
+<li><p>空间复杂度：O(1)。</p>
+</li>
+</ul>
+<p><strong>方法二：Brian Kernighan 算法</strong></p>
+<p><strong>代码</strong></p>
+<p>跳过0直接计算1的个数。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">hammingDistance</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> s = x ^ y, ret = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (s) &#123;</span><br><span class="line">            s &amp;= s - <span class="number">1</span>;</span><br><span class="line">            ret++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li><p>时间复杂度：O(logC)，其中 CC 是元素的数据范围，在本题中logC&#x3D;log2^31 &#x3D;31。</p>
+</li>
+<li><p>空间复杂度：O(1)。</p>
+</li>
+</ul>
+<h4 id="477-汉明距离总和"><a href="#477-汉明距离总和" class="headerlink" title="477. 汉明距离总和"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/total-hamming-distance/" >477. 汉明距离总和<i class="fas fa-external-link-alt"></i></a></h4><p>2021-05-28，打卡第15天，每天都要坚持呀！</p>
+<p>首先想到的是暴力，提交就发现超时了，只能用其他方法了。</p>
+<p><strong>方法一：按位统计</strong></p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">totalHammingDistance</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> total=<span class="number">0</span>, size = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> one,zero;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">30</span>;i++)&#123;</span><br><span class="line">            one = <span class="number">0</span>; </span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> &amp;num : nums )&#123;</span><br><span class="line">                one += (num&gt;&gt;i) &amp; <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            zero = size-one;</span><br><span class="line">            total += zero * one;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong>：</p>
+<ul>
+<li>时间复杂度：O(n⋅L)。其中 n 是数组 nums 的长度，L&#x3D;30。</li>
+<li>空间复杂度：O(1)。</li>
+</ul>
+<h4 id="231-2-的幂"><a href="#231-2-的幂" class="headerlink" title="231. 2 的幂"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/power-of-two/" >231. 2 的幂<i class="fas fa-external-link-alt"></i></a></h4><p>2021-5-30，美好的一天从早起开始。</p>
+<p><strong>思路</strong></p>
+<p>一个数 n 是 2 的幂，当且仅当 n 是正整数，并且 n 的二进制表示中仅包含 1 个 1。</p>
+<p><strong>代码一</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isPowerOfTwo</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> n &gt; &amp;&amp; ( n &amp; (n - <span class="number">1</span>)) == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>代码二</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isPowerOfTwo</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> n &gt; <span class="number">0</span> &amp;&amp; (n &amp; -n) == n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析：</strong></p>
+<p>时间复杂度：O(1)</p>
+<p>空间复杂度：O(1)</p>
+<h4 id="342-4的幂"><a href="#342-4的幂" class="headerlink" title="342. 4的幂"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/power-of-four/" >342. 4的幂<i class="fas fa-external-link-alt"></i></a></h4><p>2021-05-31，乒乓球考试终于考完啦~</p>
+<p><strong>方法一：二进制表示中 1 的位置</strong></p>
+<p><strong>思路</strong></p>
+<p>先判断是不是2的倍数，再判断是不是4的倍数。</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isPowerOfFour</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> x = <span class="number">0b101010101010101010101010101010101</span>;</span><br><span class="line">        <span class="keyword">return</span> n&gt;<span class="number">0</span> &amp;&amp; (n&amp;(n<span class="number">-1</span>))==<span class="number">0</span> &amp;&amp; (x&amp;n)!=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<p>时间复杂度：O(1)</p>
+<p>空间复杂度：O(1）</p>
+<p><strong>方法二：取模性质</strong></p>
+<p><strong>思路</strong></p>
+<p>4的幂有两条性质：</p>
+<ol>
+<li>二进制中只有一个1</li>
+<li>除以3余1</li>
+</ol>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isPowerOfFour</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> n&gt;<span class="number">0</span> &amp;&amp; (n&amp;(n<span class="number">-1</span>))==<span class="number">0</span> &amp;&amp; ((n%<span class="number">3</span>)==<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<p>时间复杂度：O(1)</p>
+<p>空间复杂度：O(1）</p>
+<h4 id="523-连续的子数组和"><a href="#523-连续的子数组和" class="headerlink" title="523. 连续的子数组和"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/continuous-subarray-sum/" >523. 连续的子数组和<i class="fas fa-external-link-alt"></i></a></h4><p>2021-06-02，昨天遇见一位说话很<del>可爱</del>（欠）的女生（聊天中发现，可爱这个词她觉得并不准确，可我觉得没问题呀，但我还是换成了她对自己的描述：欠 ○( ＾皿＾)っHiahiahia…），幸好要到了联系方式，否则我真的会挂念很久的。一开始也是怂了，其实只要敢迈出这一步真的不难…</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"># 前缀</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">checkSubarraySum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> m = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span> (m &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; mp;</span><br><span class="line">        mp[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">        <span class="type">int</span> remainder = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            remainder = (remainder + nums[i]) % k;</span><br><span class="line">            <span class="keyword">if</span> (mp.<span class="built_in">count</span>(remainder)) &#123;</span><br><span class="line">                <span class="type">int</span> prevIndex = mp[remainder];</span><br><span class="line">                <span class="keyword">if</span> (i - prevIndex &gt;= <span class="number">2</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                mp[remainder] = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li><p>时间复杂度：O(m)，其中 m 是数组 nums 的长度。需要遍历数组一次。</p>
+</li>
+<li><p>空间复杂度：O(min(m,k))，其中 m 是数组 nums 的长度。空间复杂度主要取决于哈希表，哈希表中存储每个余数第一次出现的下标，最多有 min(m,k) 个余数。</p>
+</li>
+</ul>
+<h4 id="160-相交链表"><a href="#160-相交链表" class="headerlink" title="160. 相交链表"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/" >160. 相交链表<i class="fas fa-external-link-alt"></i></a></h4><p>2021-06-04，走到尽头见不到你，于是走过你来时的路，等到相遇时才发现，你也走过我来时的路。</p>
+<p><strong>思路</strong></p>
+<p>利用集合，先遍历一遍链表A，将A中的所节点存入set，再遍历链表B，如果遇到当B中的某一节点出现在set中，说明该节点是相交节点，返回该节点即可，没找到返回<code>null</code>。</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode *<span class="title">getIntersectionNode</span><span class="params">(ListNode *headA, ListNode *headB)</span> </span>&#123;</span><br><span class="line">        unordered_set&lt;ListNode *&gt; Set;</span><br><span class="line">        ListNode *p = headA;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(p)&#123;</span><br><span class="line">            Set.<span class="built_in">insert</span>(p);</span><br><span class="line">            p=p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        p=headB;</span><br><span class="line">        <span class="keyword">while</span>(p)&#123;</span><br><span class="line">            <span class="keyword">if</span>(Set.<span class="built_in">find</span>(p)!=Set.<span class="built_in">end</span>())</span><br><span class="line">                <span class="keyword">return</span> p;</span><br><span class="line">            p=p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li>时间复杂度：O(m+n)，其中 m 和 n 是分别是链表 headA 和 headB 的长度。两个指针同时遍历两个链表，每个指针遍历两个链表各一次。</li>
+<li>空间复杂度：O(1)。</li>
+</ul>
+<h4 id="203-移除链表元素"><a href="#203-移除链表元素" class="headerlink" title="203. 移除链表元素"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-linked-list-elements/" >203. 移除链表元素<i class="fas fa-external-link-alt"></i></a></h4><p><strong>思路</strong></p>
+<p>递归yyds</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">removeElements</span><span class="params">(ListNode* head, <span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head==<span class="literal">nullptr</span>) <span class="keyword">return</span> head;</span><br><span class="line">        head-&gt;next = <span class="built_in">removeElements</span>(head-&gt;next, val);</span><br><span class="line">        <span class="keyword">if</span>(head-&gt;val == val)</span><br><span class="line">            <span class="keyword">return</span> head-&gt;next;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li><p>时间复杂度：O(n)，其中 n 是链表的长度。递归过程中需要遍历链表一次。</p>
+</li>
+<li><p>空间复杂度：O(n)，其中 n 是链表的长度。空间复杂度主要取决于递归调用栈，最多不会超过 n 层。</p>
+</li>
+</ul>
+<h4 id="726-原子的数量"><a href="#726-原子的数量" class="headerlink" title="726. 原子的数量"></a><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/number-of-atoms/" >726. 原子的数量<i class="fas fa-external-link-alt"></i></a></h4><p>2021-07-05，一个月没更新了，今天终于想起来了，一看题，哦困难啊，告辞告辞。</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">countOfAtoms</span><span class="params">(string formula)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> i = <span class="number">0</span>, n = formula.<span class="built_in">length</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">auto</span> parseAtom = [&amp;]() -&gt; string &#123;</span><br><span class="line">            string atom;</span><br><span class="line">            atom += formula[i++]; <span class="comment">// 扫描首字母</span></span><br><span class="line">            <span class="keyword">while</span> (i &lt; n &amp;&amp; <span class="built_in">islower</span>(formula[i])) &#123;</span><br><span class="line">                atom += formula[i++]; <span class="comment">// 扫描首字母后的小写字母</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> atom;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">auto</span> parseNum = [&amp;]() -&gt; <span class="type">int</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (i == n || !<span class="built_in">isdigit</span>(formula[i])) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>; <span class="comment">// 不是数字，视作 1</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="type">int</span> num = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (i &lt; n &amp;&amp; <span class="built_in">isdigit</span>(formula[i])) &#123;</span><br><span class="line">                num = num * <span class="number">10</span> + <span class="built_in">int</span>(formula[i++] - <span class="string">&#x27;0&#x27;</span>); <span class="comment">// 扫描数字</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> num;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        stack&lt;unordered_map&lt;string, <span class="type">int</span>&gt;&gt; stk;</span><br><span class="line">        stk.<span class="built_in">push</span>(&#123;&#125;);</span><br><span class="line">        <span class="keyword">while</span> (i &lt; n) &#123;</span><br><span class="line">            <span class="type">char</span> ch = formula[i];</span><br><span class="line">            <span class="keyword">if</span> (ch == <span class="string">&#x27;(&#x27;</span>) &#123;</span><br><span class="line">                i++;</span><br><span class="line">                stk.<span class="built_in">push</span>(&#123;&#125;); <span class="comment">// 将一个空的哈希表压入栈中，准备统计括号内的原子数量</span></span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ch == <span class="string">&#x27;)&#x27;</span>) &#123;</span><br><span class="line">                i++;</span><br><span class="line">                <span class="type">int</span> num = <span class="built_in">parseNum</span>(); <span class="comment">// 括号右侧数字</span></span><br><span class="line">                <span class="keyword">auto</span> atomNum = stk.<span class="built_in">top</span>();</span><br><span class="line">                stk.<span class="built_in">pop</span>(); <span class="comment">// 弹出括号内的原子数量</span></span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;[atom, v] : atomNum) &#123;</span><br><span class="line">                    stk.<span class="built_in">top</span>()[atom] += v * num; <span class="comment">// 将括号内的原子数量乘上 num，加到上一层的原子数量中</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                string atom = <span class="built_in">parseAtom</span>();</span><br><span class="line">                <span class="type">int</span> num = <span class="built_in">parseNum</span>();</span><br><span class="line">                stk.<span class="built_in">top</span>()[atom] += num; <span class="comment">// 统计原子数量</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">auto</span> &amp;atomNum = stk.<span class="built_in">top</span>();</span><br><span class="line">        vector&lt;pair&lt;string, <span class="type">int</span>&gt;&gt; pairs;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;[atom, v] : atomNum) &#123;</span><br><span class="line">            pairs.<span class="built_in">emplace_back</span>(atom, v);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(pairs.<span class="built_in">begin</span>(), pairs.<span class="built_in">end</span>());</span><br><span class="line"></span><br><span class="line">        string ans;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;p : pairs) &#123;</span><br><span class="line">            ans += p.first;</span><br><span class="line">            <span class="keyword">if</span> (p.second &gt; <span class="number">1</span>) &#123;</span><br><span class="line">                ans += <span class="built_in">to_string</span>(p.second);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/LeetCode/">LeetCode</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1/">每日打卡</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到 QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信扫一扫"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到微博"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2021/06/03/2021-06-03-Record%20Catch%20a%20girl%20from%20scratch/"
+                                   title="记录：从零开始追一个女生"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">记录：从零开始追一个女生</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2021/04/18/2021-04-18-Remember%20to%20participate%20in%20the%20Blue%20Bridge%20Cup%20for%20the%20first%20time/"
+                                   title="记第一次参加蓝桥杯"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">记第一次参加蓝桥杯</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;评论
+        </div>
+        <div class="comment-plugin-fail border-box">
+    <span class="fail-tip">评论插件加载失败</span>
+    <button class="reload keep-button">点击重新加载</button>
+</div>
+<div class="comment-plugin-loading flex-center border-box">
+    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
+    <span class="load-tip">正在加载评论插件</span>
+</div>
+<script data-pjax>
+  window.KeepCommentPlugin = {}
+  window.KeepCommentPlugin.hideLoading = () => {
+    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
+    cplDom.style.display = 'none'
+  }
+  window.KeepCommentPlugin.loadFailHandle = () => {
+    window.KeepCommentPlugin.hideLoading()
+    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
+    cpfDom.style.display = 'flex'
+    cpfDom.querySelector('.reload').addEventListener('click', () => {
+      window.location.reload()
+    })
+  }
+</script>
+
+        
+            
+
+    <div class="valine-container">
+        <div id="vcomments"></div>
+        <script data-pjax
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"
+                async
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        ></script>
+        <script data-pjax
+                async
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        >
+          window.KeepCommentPlugin.initValine = () => {
+            const config = {
+              el: '#vcomments',
+              appId: '1PTJXbrdVcQCMR1j0JLlpHCU-gzGzoHsz',
+              appKey: '56lf22kttbniHlMSEFsawHHc',
+              meta: ['nick', 'mail', 'link'],
+              avatar: 'wavatar',
+              enableQQ: true,
+              placeholder: 'Say something.',
+              lang: 'zh-CN,en,zh-TW,default'.toLowerCase()
+            }
+
+            if ('') {
+              config.serverURLs = ''
+            }
+
+            if (window?.Valine) {
+              new Valine(config)
+              window.KeepCommentPlugin.hideLoading()
+            } else {
+              setTimeout(() => {
+                window.KeepCommentPlugin.initValine()
+              }, 1000)
+            }
+          }
+
+          if ('true' === 'true') {
+            setTimeout(() => {
+              window.KeepCommentPlugin.initValine()
+            }, 1200)
+          } else {
+            window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initValine)
+          }
+        </script>
+    </div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#12-%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97"><span class="nav-text">12. 整数转罗马数字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0"><span class="nav-text">13. 罗马数字转整数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#421-%E6%95%B0%E7%BB%84%E4%B8%AD%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%80%BC"><span class="nav-text">421. 数组中两个数的最大异或值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#993-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%A0%82%E5%85%84%E5%BC%9F%E8%8A%82%E7%82%B9"><span class="nav-text">993. 二叉树的堂兄弟节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1442-%E5%BD%A2%E6%88%90%E4%B8%A4%E4%B8%AA%E5%BC%82%E6%88%96%E7%9B%B8%E7%AD%89%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%89%E5%85%83%E7%BB%84%E6%95%B0%E7%9B%AE"><span class="nav-text">1442. 形成两个异或相等数组的三元组数目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1738-%E6%89%BE%E5%87%BA%E7%AC%AC-K-%E5%A4%A7%E7%9A%84%E5%BC%82%E6%88%96%E5%9D%90%E6%A0%87%E5%80%BC"><span class="nav-text">1738. 找出第 K 大的异或坐标值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#692-%E5%89%8DK%E4%B8%AA%E9%AB%98%E9%A2%91%E5%8D%95%E8%AF%8D"><span class="nav-text">692. 前K个高频单词</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1035-%E4%B8%8D%E7%9B%B8%E4%BA%A4%E7%9A%84%E7%BA%BF"><span class="nav-text">1035. 不相交的线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#810-%E9%BB%91%E6%9D%BF%E5%BC%82%E6%88%96%E6%B8%B8%E6%88%8F"><span class="nav-text">810. 黑板异或游戏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1707-%E4%B8%8E%E6%95%B0%E7%BB%84%E4%B8%AD%E5%85%83%E7%B4%A0%E7%9A%84%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%80%BC"><span class="nav-text">1707. 与数组中元素的最大异或值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1190-%E5%8F%8D%E8%BD%AC%E6%AF%8F%E5%AF%B9%E6%8B%AC%E5%8F%B7%E9%97%B4%E7%9A%84%E5%AD%90%E4%B8%B2"><span class="nav-text">1190. 反转每对括号间的子串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#461-%E6%B1%89%E6%98%8E%E8%B7%9D%E7%A6%BB"><span class="nav-text">461. 汉明距离</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#477-%E6%B1%89%E6%98%8E%E8%B7%9D%E7%A6%BB%E6%80%BB%E5%92%8C"><span class="nav-text">477. 汉明距离总和</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#231-2-%E7%9A%84%E5%B9%82"><span class="nav-text">231. 2 的幂</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#342-4%E7%9A%84%E5%B9%82"><span class="nav-text">342. 4的幂</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#523-%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C"><span class="nav-text">523. 连续的子数组和</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#160-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8"><span class="nav-text">160. 相交链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#203-%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0"><span class="nav-text">203. 移除链表元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#726-%E5%8E%9F%E5%AD%90%E7%9A%84%E6%95%B0%E9%87%8F"><span class="nav-text">726. 原子的数量</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2025
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">cxxzsh</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">访客数</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">访问量</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#12-%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97"><span class="nav-text">12. 整数转罗马数字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0"><span class="nav-text">13. 罗马数字转整数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#421-%E6%95%B0%E7%BB%84%E4%B8%AD%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%80%BC"><span class="nav-text">421. 数组中两个数的最大异或值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#993-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%A0%82%E5%85%84%E5%BC%9F%E8%8A%82%E7%82%B9"><span class="nav-text">993. 二叉树的堂兄弟节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1442-%E5%BD%A2%E6%88%90%E4%B8%A4%E4%B8%AA%E5%BC%82%E6%88%96%E7%9B%B8%E7%AD%89%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%89%E5%85%83%E7%BB%84%E6%95%B0%E7%9B%AE"><span class="nav-text">1442. 形成两个异或相等数组的三元组数目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1738-%E6%89%BE%E5%87%BA%E7%AC%AC-K-%E5%A4%A7%E7%9A%84%E5%BC%82%E6%88%96%E5%9D%90%E6%A0%87%E5%80%BC"><span class="nav-text">1738. 找出第 K 大的异或坐标值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#692-%E5%89%8DK%E4%B8%AA%E9%AB%98%E9%A2%91%E5%8D%95%E8%AF%8D"><span class="nav-text">692. 前K个高频单词</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1035-%E4%B8%8D%E7%9B%B8%E4%BA%A4%E7%9A%84%E7%BA%BF"><span class="nav-text">1035. 不相交的线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#810-%E9%BB%91%E6%9D%BF%E5%BC%82%E6%88%96%E6%B8%B8%E6%88%8F"><span class="nav-text">810. 黑板异或游戏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1707-%E4%B8%8E%E6%95%B0%E7%BB%84%E4%B8%AD%E5%85%83%E7%B4%A0%E7%9A%84%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%80%BC"><span class="nav-text">1707. 与数组中元素的最大异或值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1190-%E5%8F%8D%E8%BD%AC%E6%AF%8F%E5%AF%B9%E6%8B%AC%E5%8F%B7%E9%97%B4%E7%9A%84%E5%AD%90%E4%B8%B2"><span class="nav-text">1190. 反转每对括号间的子串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#461-%E6%B1%89%E6%98%8E%E8%B7%9D%E7%A6%BB"><span class="nav-text">461. 汉明距离</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#477-%E6%B1%89%E6%98%8E%E8%B7%9D%E7%A6%BB%E6%80%BB%E5%92%8C"><span class="nav-text">477. 汉明距离总和</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#231-2-%E7%9A%84%E5%B9%82"><span class="nav-text">231. 2 的幂</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#342-4%E7%9A%84%E5%B9%82"><span class="nav-text">342. 4的幂</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#523-%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C"><span class="nav-text">523. 连续的子数组和</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#160-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8"><span class="nav-text">160. 相交链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#203-%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0"><span class="nav-text">203. 移除链表元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#726-%E5%8E%9F%E5%AD%90%E7%9A%84%E6%95%B0%E9%87%8F"><span class="nav-text">726. 原子的数量</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/header-shrink.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/back2top.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/toggle-theme.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/code-block.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/libs/anime.min.js"></script>
+
+<!-- local search -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/local-search.min.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/lazyload.min.js"></script>
+
+
+<div class="pjax">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/toc.min.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/share.min.js"></script>
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>
